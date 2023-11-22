@@ -1,6 +1,6 @@
 import { Text } from "@react-three/drei"
 
-export default function TextArea(props) {
+export default function FlatText(props) {
   const fontUrl = "./fonts/bebas-neue-v9-latin-regular.woff"
 
   return (

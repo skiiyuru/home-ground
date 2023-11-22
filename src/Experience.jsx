@@ -3,12 +3,11 @@ import { Physics, RigidBody } from "@react-three/rapier"
 import Ecctrl, { EcctrlAnimation } from "ecctrl"
 import { Perf } from "r3f-perf"
 import { Suspense } from "react"
-import CharacterModel from "./components/CharacterModel.jsx"
-import LetterBlocks from "./components/LetterBlocks.jsx"
-import Lights from "./components/Lights.jsx"
-import FlatText from "./components/FlatText.jsx"
-import Career from "./components/Career.jsx"
 import Bio from "./components/Bio.jsx"
+import Career from "./components/Career.jsx"
+import CharacterModel from "./components/CharacterModel.jsx"
+import Lights from "./components/Lights.jsx"
+import Socials from "./components/Socials.jsx"
 
 export default function Experience() {
   const keyboardMap = [
@@ -87,6 +86,9 @@ export default function Experience() {
         <Bio />
 
         <Career rotation-y={Math.PI} />
+
+        {/* Socials */}
+        <Socials />
       </Physics>
     </>
   )

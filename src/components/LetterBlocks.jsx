@@ -1,12 +1,16 @@
 import { Text3D } from "@react-three/drei"
 import { RigidBody } from "@react-three/rapier"
-import { MeshStandardMaterial, ColorManagement } from "three"
+import {
+  MeshStandardMaterial,
+  ColorManagement,
+  MeshNormalMaterial,
+} from "three"
 
 ColorManagement.enabled = false
-const material = new MeshStandardMaterial({
-  color: "white",
-  metalness: 0,
-  roughness: 0,
+const material = new MeshNormalMaterial({
+  // color: "white",
+  // metalness: 0,
+  // roughness: 0,
 })
 
 function LetterBlock(props) {
