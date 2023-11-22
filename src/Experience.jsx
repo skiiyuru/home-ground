@@ -1,18 +1,14 @@
-import {
-  Environment,
-  KeyboardControls,
-  Sky,
-  Stars,
-  useGLTF,
-} from "@react-three/drei"
+import { KeyboardControls, Sky, useGLTF } from "@react-three/drei"
 import { Physics, RigidBody } from "@react-three/rapier"
 import Ecctrl, { EcctrlAnimation } from "ecctrl"
 import { Perf } from "r3f-perf"
-import Lights from "./components/Lights.jsx"
+import { Suspense } from "react"
 import CharacterModel from "./components/CharacterModel.jsx"
-import TextArea from "./components/TextArea.jsx"
-
-const textScaleFactor = 1.5
+import LetterBlocks from "./components/LetterBlocks.jsx"
+import Lights from "./components/Lights.jsx"
+import FlatText from "./components/FlatText.jsx"
+import Career from "./components/Career.jsx"
+import Bio from "./components/Bio.jsx"
 
 export default function Experience() {
   const keyboardMap = [
@@ -61,42 +57,37 @@ export default function Experience() {
         {/* <Debug /> */}
 
         <KeyboardControls map={keyboardMap}>
-          <Ecctrl animated debug position={[0, 7, 0]}>
+          <Ecctrl animated position={[0, 7, 0]}>
             <EcctrlAnimation
               characterURL={characterURL}
               animationSet={animationSet}
             >
-              <CharacterModel />
+              <Suspense fallback={null}>
+                <CharacterModel />
+              </Suspense>
             </EcctrlAnimation>
           </Ecctrl>
         </KeyboardControls>
 
-        <RigidBody type="fixed" colliders="trimesh">
-          <primitive object={stadium.scene} scale={0.7} rotation-y={Math.PI} />
-        </RigidBody>
-      </Physics>
+        <Suspense fallback={null}>
+          <RigidBody
+            type="fixed"
+            colliders="trimesh"
+            restitution={0.2}
+            friction={1}
+          >
+            <primitive
+              object={stadium.scene}
+              scale={0.7}
+              rotation-y={Math.PI}
+            />
+          </RigidBody>
+        </Suspense>
 
-      {/* Bio */}
-      <group position-z={10}>
-        <TextArea
-          scale={1 * textScaleFactor}
-          value={"STEPHEN KIIYURU"}
-          position={[0, 1.9, -4]}
-        />
-        <TextArea
-          scale={0.41 * textScaleFactor}
-          value={"CREATIVE DEVELOPER"}
-          position={[0, 1.9, -5]}
-        />
-        <TextArea
-          isParagraph
-          scale={0.19 * textScaleFactor}
-          value={`
-          Creative developer living in Nairobi, freelancer, lead developer 
-          at The Discovery Centre and a huge Manchester United fan :)`}
-          position={[0.25, 1.9, -6]}
-        />
-      </group>
+        <Bio />
+
+        <Career rotation-y={Math.PI} />
+      </Physics>
     </>
   )
 }

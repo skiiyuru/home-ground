@@ -1,3 +1,5 @@
+import { SpotLight } from "@react-three/drei"
+
 export default function Lights() {
   return (
     <>
@@ -13,6 +15,13 @@ export default function Lights() {
         shadow-camera-left={-20}
       />
       <ambientLight intensity={0.2} />
+      {/* <SpotLight
+        position={[0, 5, 0]}
+        distance={5}
+        angle={2}
+        attenuation={10}
+        anglePower={5} // Diffuse-cone anglePower (default: 5)
+      /> */}
     </>
   )
 }
