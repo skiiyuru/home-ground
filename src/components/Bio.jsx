@@ -5,7 +5,7 @@ export default function Bio(props) {
   return (
     <group position-z={6.5} {...props}>
       <group position-x={1.7}>
-        <LetterBlocks str={"STEPHEN"} position-y={0.7} />
+        <LetterBlocks str={"STEPHEN"} position-y={0.8} />
         <LetterBlocks str={"KIIYURU"} />
       </group>
 

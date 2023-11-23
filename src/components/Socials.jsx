@@ -6,22 +6,22 @@ const items = [
   {
     src: "./textures/github.png",
     z: 1,
-    label: "skiiyuru",
+    label: "github",
   },
   {
     src: "./textures/mail.png",
-    z: 2,
-    label: "skiiyuru",
+    z: 3,
+    label: "mail",
   },
   {
     src: "./textures/in.png",
     z: -1,
-    label: "skiiyuru",
+    label: "in",
   },
   {
     src: "./textures/x.png",
-    z: -2,
-    label: "snkiiyuru",
+    z: -3,
+    label: "x",
   },
 ]
 
@@ -29,15 +29,15 @@ export default function Socials() {
   return (
     <>
       {items.map(({ src, z, label }, idx) => (
-        <group key={"s" + idx} position-x={5} position-z={z}>
-          <Icon src={src} position-y={2.2} />
-          <FlatText
+        <group key={"s" + idx} position-x={5.5} position-z={z}>
+          <Icon src={src} position-y={2.4} label={label} />
+          {/* <FlatText
             position-x={-0.5}
             rotation-z={degToRad(-90)}
             position-y={1.9}
             scale={0.25}
             value={label}
-          />
+          /> */}
         </group>
       ))}
     </>

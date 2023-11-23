@@ -29,8 +29,8 @@ function LetterBlock(props) {
         height={0.2}
         curveSegments={12}
         bevelEnabled
-        bevelThickness={0.02}
-        bevelSize={0.02}
+        bevelThickness={0.03}
+        bevelSize={0.03}
         bevelOffset={0}
         bevelSegments={5}
       >

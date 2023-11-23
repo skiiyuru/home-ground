@@ -8,6 +8,7 @@ import Career from "./components/Career.jsx"
 import CharacterModel from "./components/CharacterModel.jsx"
 import Lights from "./components/Lights.jsx"
 import Socials from "./components/Socials.jsx"
+import Projects from "./components/Projects.jsx"
 
 export default function Experience() {
   const keyboardMap = [
@@ -52,11 +53,10 @@ export default function Experience() {
 
       <Sky />
 
-      <Physics>
-        {/* <Debug /> */}
-
+      <Physics timeStep="vary">
+        {/* Character */}
         <KeyboardControls map={keyboardMap}>
-          <Ecctrl animated position={[0, 7, 0]}>
+          <Ecctrl name="character" animated position={[0, 7, 0]}>
             <EcctrlAnimation
               characterURL={characterURL}
               animationSet={animationSet}
@@ -68,6 +68,7 @@ export default function Experience() {
           </Ecctrl>
         </KeyboardControls>
 
+        {/* Map */}
         <Suspense fallback={null}>
           <RigidBody
             type="fixed"
@@ -78,7 +79,7 @@ export default function Experience() {
             <primitive
               object={stadium.scene}
               scale={0.7}
-              rotation-y={Math.PI}
+              // rotation-y={Math.PI}
             />
           </RigidBody>
         </Suspense>
@@ -87,8 +88,9 @@ export default function Experience() {
 
         <Career rotation-y={Math.PI} />
 
-        {/* Socials */}
         <Socials />
+
+        {/* <Projects /> */}
       </Physics>
     </>
   )
