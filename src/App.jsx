@@ -8,7 +8,14 @@ export default function App() {
     <>
       <EcctrlJoystick />
 
-      <Canvas shadows>
+      <Canvas
+        shadows
+        // onPointerDown={(e) => {
+        //   if (e.pointerType === "mouse") {
+        //     e.target.requestPointerLock()
+        //   }
+        // }}
+      >
         <Experience />
       </Canvas>
 

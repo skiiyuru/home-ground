@@ -71,7 +71,7 @@ export default function Experience() {
       <Stars
         radius={100}
         depth={50}
-        count={777}
+        count={2000}
         factor={4}
         saturation={0}
         fade
