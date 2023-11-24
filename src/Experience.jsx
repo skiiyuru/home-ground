@@ -1,4 +1,4 @@
-import { KeyboardControls, Sky } from "@react-three/drei"
+import { KeyboardControls, Sky, SoftShadows, Stars } from "@react-three/drei"
 import { Physics } from "@react-three/rapier"
 import Ecctrl, { EcctrlAnimation } from "ecctrl"
 import { Perf } from "r3f-perf"
@@ -11,6 +11,7 @@ import Lights from "./components/Lights.jsx"
 import Projects from "./components/Projects.jsx"
 import Socials from "./components/Socials.jsx"
 import Stadium from "./components/Stadium.jsx"
+import Map from "./components/Map.jsx"
 
 export default function Experience() {
   const keyboardMap = [
@@ -60,7 +61,22 @@ export default function Experience() {
         rings={11}
       /> */}
 
-      <Sky />
+      <Sky
+        distance={450000}
+        sunPosition={[0, 0, 0]}
+        inclination={0}
+        azimuth={0.25}
+      />
+
+      <Stars
+        radius={100}
+        depth={50}
+        count={777}
+        factor={4}
+        saturation={0}
+        fade
+        speed={1}
+      />
 
       <Physics timeStep="vary">
         {/* Character */}
@@ -79,7 +95,8 @@ export default function Experience() {
 
         {/* Map */}
         <Suspense fallback={null}>
-          <Stadium />
+          {/* <Stadium /> */}
+          <Map />
         </Suspense>
 
         <Bio />
