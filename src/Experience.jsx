@@ -1,15 +1,16 @@
-import { KeyboardControls, Sky, useGLTF } from "@react-three/drei"
-import { Physics, RigidBody } from "@react-three/rapier"
+import { KeyboardControls, Sky } from "@react-three/drei"
+import { Physics } from "@react-three/rapier"
 import Ecctrl, { EcctrlAnimation } from "ecctrl"
 import { Perf } from "r3f-perf"
 import { Suspense } from "react"
 import Bio from "./components/Bio.jsx"
 import Career from "./components/Career.jsx"
 import CharacterModel from "./components/CharacterModel.jsx"
-import Lights from "./components/Lights.jsx"
-import Socials from "./components/Socials.jsx"
-import Projects from "./components/Projects.jsx"
 import Lab from "./components/Lab.jsx"
+import Lights from "./components/Lights.jsx"
+import Projects from "./components/Projects.jsx"
+import Socials from "./components/Socials.jsx"
+import Stadium from "./components/Stadium.jsx"
 
 export default function Experience() {
   const keyboardMap = [
@@ -43,8 +44,6 @@ export default function Experience() {
     action4: "CharacterArmature|Punch",
   }
 
-  const stadium = useGLTF("/models/stadium.glb")
-
   return (
     <>
       <color args={["#000909"]} attach={"background"} />
@@ -52,6 +51,14 @@ export default function Experience() {
       <Perf position="top-left" />
 
       <Lights />
+
+      {/* <SoftShadows
+        frustum={3.75}
+        // size={0.005}
+        // near={9.5}
+        samples={17}
+        rings={11}
+      /> */}
 
       <Sky />
 
@@ -72,18 +79,7 @@ export default function Experience() {
 
         {/* Map */}
         <Suspense fallback={null}>
-          <RigidBody
-            type="fixed"
-            colliders="trimesh"
-            restitution={0.2}
-            friction={1}
-          >
-            <primitive
-              object={stadium.scene}
-              scale={0.7}
-              // rotation-y={Math.PI}
-            />
-          </RigidBody>
+          <Stadium />
         </Suspense>
 
         <Bio />

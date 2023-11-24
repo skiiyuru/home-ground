@@ -15,7 +15,7 @@ export default function Card(props) {
       friction={1}
       {...props}
     >
-      <mesh scale={4}>
+      <mesh scale={4} castShadow receiveShadow>
         {/* <sphereGeometry args={[0.3, 64, 64]} /> */}
         <boxGeometry args={[0.05, 0.5, 0.7]} />
         <meshBasicMaterial color={"#AFC0C2"} />

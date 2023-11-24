@@ -15,7 +15,7 @@ export default function Icon(props) {
       friction={1}
       {...props}
     >
-      <mesh scale={1.5}>
+      <mesh scale={1.5} castShadow receiveShadow>
         {/* <sphereGeometry args={[0.3, 64, 64]} /> */}
         <boxGeometry args={[0.15, 0.5, 0.5]} />
         <meshNormalMaterial />

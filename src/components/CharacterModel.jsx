@@ -72,4 +72,4 @@ export default function CharacterModel(props) {
   )
 }
 
-useGLTF.preload("/Demon.glb")
+useGLTF.preload("/models/Demon.glb")

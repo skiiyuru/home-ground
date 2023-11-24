@@ -33,6 +33,8 @@ function LetterBlock(props) {
         bevelSize={0.02}
         bevelOffset={0}
         bevelSegments={5}
+        castShadow
+        receiveShadow
       >
         {props.value}
         {/* <meshStandardMaterial color={props.color} /> */}

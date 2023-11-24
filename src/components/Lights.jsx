@@ -13,6 +13,7 @@ export default function Lights() {
         shadow-camera-right={20}
         shadow-camera-bottom={-20}
         shadow-camera-left={-20}
+        shadow-mapSize={[1024, 1024]}
       />
       <ambientLight intensity={0.2} />
       {/* <SpotLight
