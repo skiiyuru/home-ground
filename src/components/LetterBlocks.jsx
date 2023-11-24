@@ -29,8 +29,8 @@ function LetterBlock(props) {
         height={0.2}
         curveSegments={12}
         bevelEnabled
-        bevelThickness={0.03}
-        bevelSize={0.03}
+        bevelThickness={0.02}
+        bevelSize={0.02}
         bevelOffset={0}
         bevelSegments={5}
       >
@@ -51,7 +51,7 @@ export default function LetterBlocks(props) {
           <LetterBlock
             key={idx}
             value={letter}
-            position={[-idx * 0.5, 1.9, 0]}
+            position={[-idx * 0.5, 1.95, 0]}
           />
         ))}
     </group>

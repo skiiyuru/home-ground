@@ -4,9 +4,9 @@ import FlatText from "./FlatText"
 export default function Bio(props) {
   return (
     <group position-z={6.5} {...props}>
-      <group position-x={1.7}>
-        <LetterBlocks str={"STEPHEN"} position-y={0.8} />
-        <LetterBlocks str={"KIIYURU"} />
+      <group position-x={1.7} scale={0.95}>
+        <LetterBlocks str={"KIIYURU"} position-x={-0.03} position-y={1} />
+        <LetterBlocks str={"STEPHEN"} />
       </group>
 
       <group position-y={1.9}>

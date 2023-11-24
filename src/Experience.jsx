@@ -9,6 +9,7 @@ import CharacterModel from "./components/CharacterModel.jsx"
 import Lights from "./components/Lights.jsx"
 import Socials from "./components/Socials.jsx"
 import Projects from "./components/Projects.jsx"
+import Lab from "./components/Lab.jsx"
 
 export default function Experience() {
   const keyboardMap = [
@@ -43,6 +44,7 @@ export default function Experience() {
   }
 
   const stadium = useGLTF("/models/stadium.glb")
+
   return (
     <>
       <color args={["#000909"]} attach={"background"} />
@@ -90,7 +92,9 @@ export default function Experience() {
 
         <Socials />
 
-        {/* <Projects /> */}
+        <Projects />
+
+        <Lab />
       </Physics>
     </>
   )
