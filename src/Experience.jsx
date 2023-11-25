@@ -53,21 +53,6 @@ export default function Experience() {
 
       <Lights />
 
-      {/* <SoftShadows
-        frustum={3.75}
-        // size={0.005}
-        // near={9.5}
-        samples={17}
-        rings={11}
-      /> */}
-
-      <Sky
-        distance={450000}
-        sunPosition={[0, 0, 0]}
-        inclination={0}
-        azimuth={0.25}
-      />
-
       <Stars
         radius={100}
         depth={50}

@@ -36,7 +36,7 @@ export default function Lights() {
   return (
     <>
       <directionalLight
-        intensity={0.25}
+        intensity={0.45}
         color={"#E5F4ED"}
         castShadow
         shadow-bias={-0.0004}
