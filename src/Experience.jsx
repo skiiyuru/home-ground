@@ -11,7 +11,6 @@ import Lights from "./components/Lights.jsx"
 import Projects from "./components/Projects.jsx"
 import Socials from "./components/Socials.jsx"
 import Stadium from "./components/Stadium.jsx"
-import Map from "./components/Map.jsx"
 
 export default function Experience() {
   const keyboardMap = [
@@ -57,10 +56,10 @@ export default function Experience() {
         radius={100}
         depth={50}
         count={2000}
-        factor={4}
+        factor={5}
         saturation={0}
         fade
-        speed={1}
+        speed={0.5}
       />
 
       <Physics timeStep="vary">
@@ -78,10 +77,9 @@ export default function Experience() {
           </Ecctrl>
         </KeyboardControls>
 
-        {/* Map */}
+        {/* Stadium */}
         <Suspense fallback={null}>
-          {/* <Stadium /> */}
-          <Map />
+          <Stadium />
         </Suspense>
 
         <Bio />

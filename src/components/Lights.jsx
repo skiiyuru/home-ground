@@ -12,8 +12,9 @@ const floodLightConfig = {
   angle: 0.9,
   attenuation: 20,
   anglePower: 5,
-  intensity: 0.5,
+  intensity: 1,
   opacity: 0.2,
+  // "shadow-mapSize": [1024, 1024],
 }
 
 export default function Lights() {
@@ -35,7 +36,7 @@ export default function Lights() {
   // useHelper(ref8, SpotLightHelper, "cyan")
   return (
     <>
-      <directionalLight
+      {/* <directionalLight
         intensity={0.45}
         color={"#E5F4ED"}
         castShadow
@@ -46,27 +47,27 @@ export default function Lights() {
         shadow-camera-bottom={-20}
         shadow-camera-left={-20}
         shadow-mapSize={[1024, 1024]}
-      />
+      /> */}
 
-      <ambientLight intensity={0.1} />
+      <ambientLight intensity={0.2} />
 
       {/* front */}
-      {/* <SpotLight position={[6.1, 5.2, 10]} {...floodLightConfig} />
-      <SpotLight position={[-6.1, 5.2, 10]} {...floodLightConfig} /> */}
+      {/* <SpotLight position={[6.1, 5.2, 10]} {...floodLightConfig} /> */}
+      {/* <SpotLight position={[-6.1, 5.2, 10]} {...floodLightConfig} /> */}
       {/*  */}
-      {/* <SpotLight position={[-12.6, 9.2, 16]} {...floodLightConfig} />
-      <SpotLight ref={ref} position={[12.6, 9.2, 16]} {...floodLightConfig} /> */}
+      <SpotLight position={[-12.6, 9.2, 16]} {...floodLightConfig} />
+      {/* <SpotLight ref={ref} position={[12.6, 9.2, 16]} {...floodLightConfig} /> */}
 
       {/* back */}
-      {/* <SpotLight position={[6.1, 5.2, -10]} {...floodLightConfig} />
-      <SpotLight position={[-6.1, 5.2, -10]} {...floodLightConfig} /> */}
+      {/* <SpotLight position={[6.1, 5.2, -10]} {...floodLightConfig} /> */}
+      {/* <SpotLight position={[-6.1, 5.2, -10]} {...floodLightConfig} /> */}
       {/*  */}
       {/* <SpotLight
         ref={ref2}
         position={[-12.6, 9.2, -16]}
         {...floodLightConfig}
-      />
-      <SpotLight position={[12.6, 9.2, -16]} {...floodLightConfig} /> */}
+      /> */}
+      {/* <SpotLight position={[12.6, 9.2, -16]} {...floodLightConfig} /> */}
     </>
   )
 }

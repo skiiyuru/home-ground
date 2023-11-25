@@ -12,691 +12,100 @@ export default function Stadium(props) {
     <RigidBody type="fixed" colliders="trimesh" restitution={0.2} friction={1}>
       <group scale={0.7} {...props} dispose={null}>
         <group position={[0, 3.484, 0.254]}>
-          <group position={[0, -1.55, 0]}>
-            <group position={[-15.13, 5.43, 12.492]} scale={[1, 1, 0.549]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.FenceLongYellow_Fence_0.geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group position={[-15.13, 5.43, 6.154]} scale={[1, 1, 0.549]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(1)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box001_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group
-              position={[-2.158, 5.43, -20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-              scale={[1, 1, 0.446]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(10)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box005_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group
-              position={[3.017, 5.43, -20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-              scale={[1, 1, 0.446]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(11)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box006_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group
-              position={[-2.158, 5.43, 20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-              scale={[1, 1, 0.446]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(12)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box008_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group
-              position={[3.017, 5.43, 20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-              scale={[1, 1, 0.446]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(13)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box009_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group position={[-15.13, 5.43, -0.206]} scale={[1, 1, 0.549]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(2)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box002_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group position={[-15.13, 5.43, -6.578]} scale={[1, 1, 0.549]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(3)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box003_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group position={[15.08, 5.43, 12.492]} scale={[1, 1, 0.549]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(4)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box010_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group position={[15.08, 5.43, 6.154]} scale={[1, 1, 0.549]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(5)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box011_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group position={[15.08, 5.43, -0.206]} scale={[1, 1, 0.549]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(6)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box012_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group position={[15.08, 5.43, -6.578]} scale={[1, 1, 0.549]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(7)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box013_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group
-              position={[-7.324, 5.43, -20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-              scale={[1, 1, 0.446]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(8)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box004_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group
-              position={[-7.324, 5.43, 20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-              scale={[1, 1, 0.446]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FenceLongYellow_(9)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["collision_box007_Default-Material_0"].geometry}
-                material={materials["Default-Material"]}
-                position={[0, -0.102, -5.543]}
-                scale={[0.13, 0.22, 5.724]}
-              />
-            </group>
-            <group position={[-15.13, 5.05, 12.649]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.FencePostYellow_Fence_0.geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group position={[-15.13, 5.05, 6.312]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(1)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom001_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group
-              position={[-7.46, 5.05, -20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(11)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom005_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group
-              position={[-2.27, 5.05, -20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(12)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom006_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group
-              position={[2.89, 5.05, -20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(13)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom007_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group
-              position={[8.09, 5.05, -20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(14)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom008_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group
-              position={[-7.46, 5.05, 20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(15)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom009_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group
-              position={[-2.27, 5.05, 20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(16)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom010_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group
-              position={[2.89, 5.05, 20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(17)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom011_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group
-              position={[8.09, 5.05, 20.18]}
-              rotation={[0, -Math.PI / 2, 0]}
-            >
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(18)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom012_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group position={[-15.13, 5.05, -0.049]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(2)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom002_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group position={[-15.13, 5.05, -6.42]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(3)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom003_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group position={[-15.13, 5.05, -12.769]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(4)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom004_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group position={[15.08, 5.05, 12.649]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(5)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom013_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group position={[15.08, 5.05, 6.312]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(6)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom014_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group position={[15.08, 5.05, -0.049]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(7)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom015_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group position={[15.08, 5.05, -6.42]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(8)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom016_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-            <group position={[15.08, 5.05, -12.769]}>
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes["FencePostYellow_(9)_Fence_0"].geometry}
-                material={materials.Fence}
-              />
-              <mesh
-                castShadow
-                receiveShadow
-                geometry={
-                  nodes.collision_cylinder8_no_bottom017_No_Name_0.geometry
-                }
-                material={materials.No_Name}
-                position={[0, 0.155, 0]}
-                scale={[0.198, 0.492, 0.198]}
-              />
-            </group>
-          </group>
           <group position={[0, -4.79, 0]}>
+            {/* pitch  barriers */}
             <mesh
-              castShadow
               receiveShadow
-              geometry={nodes.Level10Visuals_blue_0.geometry}
+              geometry={nodes.Level10Visuals_orange_0002.geometry}
+              material={materials.orange}
+            />
+            <mesh
+              receiveShadow
+              geometry={nodes.Level10Visuals_orange_0002_6.geometry}
               material={materials.blue}
             />
             <mesh
+              receiveShadow
+              geometry={nodes.Level10Visuals_orange_0002_4.geometry}
+              material={materials.Fence}
+            />
+
+            {/* lights face */}
+            <mesh
+              geometry={nodes.Level10Visuals_orange_0002_1.geometry}
+              material={materials.light}
+            />
+
+            {/* light poles */}
+            <mesh
+              castShadow
+              geometry={nodes.Level10Visuals_orange_0002_2.geometry}
+              material={materials.Level10VisualsExtra2}
+            />
+
+            {/* Seats barrier */}
+            <mesh
+              receiveShadow
+              geometry={nodes.Level10Visuals_orange_0002_3.geometry}
+              material={materials["Default-Material"]}
+            />
+            <mesh
+              receiveShadow
+              geometry={nodes.Level10Visuals_orange_0002_5.geometry}
+              material={materials.No_Name}
+            />
+
+            {/* Goals */}
+            <mesh
               castShadow
               receiveShadow
-              geometry={nodes.Level10Visuals_goal_blue_0.geometry}
+              geometry={nodes.Level10Visuals_orange_0002_7.geometry}
               material={materials.goal_blue}
             />
             <mesh
               castShadow
               receiveShadow
-              geometry={nodes.Level10Visuals_goal_orange_0.geometry}
+              geometry={nodes.Level10Visuals_orange_0002_8.geometry}
               material={materials.goal_orange}
             />
             <mesh
               castShadow
-              receiveShadow
-              geometry={nodes.Level10Visuals_goalpadding_blue_0.geometry}
+              geometry={nodes.Level10Visuals_orange_0002_9.geometry}
               material={materials.goalpadding_blue}
             />
             <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Level10Visuals_goalpadding_orange_0.geometry}
+              geometry={nodes.Level10Visuals_orange_0002_10.geometry}
               material={materials.goalpadding_orange}
             />
             <mesh
-              castShadow
+              geometry={nodes.Level10Visuals_orange_0002_15.geometry}
+              material={materials.level10netting}
+            />
+
+            {/* Pitch lines */}
+            <mesh
               receiveShadow
-              geometry={nodes.Level10Visuals_lines_0.geometry}
+              geometry={nodes.Level10Visuals_orange_0002_11.geometry}
               material={materials.lines}
             />
             <mesh
-              castShadow
               receiveShadow
-              geometry={nodes.Level10Visuals_orange_0.geometry}
-              material={materials.orange}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Level10Visuals_soccerfield_0.geometry}
+              geometry={nodes.Level10Visuals_orange_0002_12.geometry}
               material={materials.soccerfield}
             />
-          </group>
-          <group position={[0, -4.79, 0]}>
+
+            {/* stands */}
             <mesh
-              castShadow
               receiveShadow
-              geometry={nodes.Level10VisualsExtra_stands_seating3_0.geometry}
+              geometry={nodes.Level10Visuals_orange_0002_13.geometry}
               material={materials.stands_seating3}
             />
             <mesh
-              castShadow
               receiveShadow
-              geometry={nodes.Level10VisualsExtra_stands_wall_0.geometry}
+              geometry={nodes.Level10Visuals_orange_0002_14.geometry}
               material={materials.stands_wall}
             />
           </group>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={
-              nodes.Level10VisualsExtra2_Level10VisualsExtra2_0.geometry
-            }
-            material={materials.Level10VisualsExtra2}
-            position={[0, -4.79, 0]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Level10VisualsExtra3_Fence_0.geometry}
-            material={materials.Fence}
-            position={[0, -4.79, 0]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Level10VisualsNets_level10netting_0.geometry}
-            material={materials.level10netting}
-            position={[0, -4.79, 0]}
-          />
         </group>
       </group>
     </RigidBody>
