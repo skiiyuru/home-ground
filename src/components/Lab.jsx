@@ -9,8 +9,8 @@ export default function Lab() {
         <LetterBlocks str={"LAB"} />
       </group>
 
-      <Card position={[10.2, 5, 2.9]} />
-      <Card position={[10.2, 5, 6.9]} />
+      <Card position={[10, 5, 2.9]} />
+      <Card position={[10, 5, 6.9]} />
 
       <Card position={[12.5, 6.75, 2.9]} />
       <Card position={[12.5, 6.75, 6.9]} />

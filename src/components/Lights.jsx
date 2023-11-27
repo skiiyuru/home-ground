@@ -14,7 +14,7 @@ const floodLightConfig = {
   anglePower: 5,
   intensity: 1,
   opacity: 0.2,
-  // "shadow-mapSize": [1024, 1024],
+  "shadow-mapSize": [1024, 1024],
 }
 
 export default function Lights() {
