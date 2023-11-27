@@ -9,11 +9,12 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "3.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
     "vite": "^4.0.4"
   },
   "dependencies": {
-    "react-joystick-component": "^6.2.1",
-    "zustand": "4.3",
     "@react-three/drei": "9.88.0",
     "@react-three/fiber": "8.14.5",
     "@react-three/rapier": "1.1.1",
@@ -23,6 +24,8 @@
     "r3f-perf": "7.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "three": "0.151.3"
+    "react-joystick-component": "^6.2.1",
+    "three": "0.151.3",
+    "zustand": "4.3"
   }
 }

@@ -33,8 +33,9 @@ export default function Icon(props) {
         </Decal>
         {showHint && (
           <Html
+            className="bg-slate-800/75 text-white text-center tracking-wider text-lg p-3 rounded-xl whitespace-nowrap select-none"
             position={[0, 0, 0]}
-            wrapperClass="label"
+            // wrapperClass="bg-slate-800"
             center
             distanceFactor={8}
             // occlude={[boxRef, sphereRef]}

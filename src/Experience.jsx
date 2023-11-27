@@ -1,5 +1,11 @@
-import { KeyboardControls, Sky, SoftShadows, Stars } from "@react-three/drei"
-import { Physics } from "@react-three/rapier"
+import {
+  Gltf,
+  KeyboardControls,
+  Sky,
+  SoftShadows,
+  Stars,
+} from "@react-three/drei"
+import { Physics, RigidBody } from "@react-three/rapier"
 import Ecctrl, { EcctrlAnimation } from "ecctrl"
 import { Perf } from "r3f-perf"
 import { Suspense } from "react"
@@ -11,6 +17,7 @@ import Lights from "./components/Lights.jsx"
 import Projects from "./components/Projects.jsx"
 import Socials from "./components/Socials.jsx"
 import Stadium from "./components/Stadium.jsx"
+import Ball from "./components/Ball.jsx"
 
 export default function Experience() {
   const keyboardMap = [
@@ -56,7 +63,7 @@ export default function Experience() {
         radius={100}
         depth={50}
         count={2000}
-        factor={5}
+        factor={4}
         saturation={0}
         fade
         speed={0.5}
@@ -80,6 +87,7 @@ export default function Experience() {
         {/* Stadium */}
         <Suspense fallback={null}>
           <Stadium />
+          <Ball />
         </Suspense>
 
         <Bio />

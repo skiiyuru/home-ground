@@ -35,7 +35,7 @@ export default function Card(props) {
         {showHint && (
           <Html
             position={[0, 0.3, 0]}
-            wrapperClass="label"
+            className="bg-slate-800/75 text-white text-center tracking-wider text-lg p-3 rounded-xl whitespace-nowrap select-none"
             center
             distanceFactor={8}
             // occlude={[boxRef, sphereRef]}

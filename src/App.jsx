@@ -5,7 +5,7 @@ import { Loader } from "@react-three/drei"
 
 export default function App() {
   return (
-    <>
+    <div className="h-screen">
       <EcctrlJoystick />
 
       <Canvas
@@ -20,6 +20,6 @@ export default function App() {
       </Canvas>
 
       <Loader />
-    </>
+    </div>
   )
 }
