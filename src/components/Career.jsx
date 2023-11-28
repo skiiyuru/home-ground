@@ -2,9 +2,9 @@ import LetterBlocks from "./LetterBlocks"
 import FlatText from "./FlatText"
 
 const items = `
-2017 | STEM TEACHER | THE DISCOVERY CENTRE \n 
-2019 | FRONT-END DEVELOPER | DISCOVERY LABS\n
-2021 | LEAD DEVELOPER | DISCOVERY LABS
+CO-FOUNDER | THE DISCOVERY CENTRE | 2017 - PRESENT \n 
+FRONT-END DEVELOPER | DISCOVERY LABS | 2019 - PRESENT \n
+DESIGN CONSULTANT | 2020 - PRESENT
 `
 
 export default function Career(props) {

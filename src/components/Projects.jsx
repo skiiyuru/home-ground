@@ -9,7 +9,7 @@ const items = [
     link: "https://imla.io/",
     position: [10, 5, -6.5],
     img: "./images/imla.png",
-    roles: ["UI Design", "UI Development"],
+    roles: ["Design", "UI Development"],
   },
   {
     title: "Longhorn Digital",
@@ -17,7 +17,7 @@ const items = [
     link: "https://longhornpublishers.com/longhorn-digital/",
     position: [10, 5, -2.5],
     img: "./images/longhorn.png",
-    roles: ["UI Design", "UI Development"],
+    roles: ["Design", "UI Development"],
   },
   {
     title: "Oxford University Press",
@@ -25,7 +25,7 @@ const items = [
     link: "https://www.oxford.co.ke/",
     position: [12.5, 6.75, -6.5],
     img: "./images/oxford.png",
-    roles: ["UI Design", "UI Development"],
+    roles: ["Design", "UI Development"],
   },
   {
     title: "The Discovery Centre",

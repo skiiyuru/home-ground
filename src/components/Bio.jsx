@@ -15,8 +15,8 @@ export default function Bio(props) {
           position-z={-1.7}
           scale={0.27}
           value={`
-          Innovative techie living in Nairobi, freelancer, lead developer 
-          at The Discovery Centre and a huge Manchester United fan :)`}
+           Creative developer living in Nairobi, Co-founder of
+           The Discovery Centre and a huge Manchester United fan :)`}
           // position-z={0.5}
           textAlign={"center"}
         />
