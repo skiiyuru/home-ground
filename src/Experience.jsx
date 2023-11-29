@@ -18,6 +18,7 @@ import Projects from "./components/Projects.jsx"
 import Socials from "./components/Socials.jsx"
 import Stadium from "./components/Stadium.jsx"
 import Ball from "./components/Ball.jsx"
+import Avatar from "./components/Avatar.jsx"
 
 export default function Experience() {
   const keyboardMap = [
@@ -32,23 +33,23 @@ export default function Experience() {
   /**
    * Character url preset
    */
-  const characterURL = "/models/Demon.glb"
+  const characterURL = "/models/sk.glb"
 
   /**
    * Character animation set preset
    */
   const animationSet = {
-    idle: "CharacterArmature|Idle",
-    walk: "CharacterArmature|Walk",
-    run: "CharacterArmature|Run",
-    jump: "CharacterArmature|Jump",
-    jumpIdle: "CharacterArmature|Jump_Idle",
-    jumpLand: "CharacterArmature|Jump_Land",
-    fall: "CharacterArmature|Duck", // This is for falling from high sky
-    action1: "CharacterArmature|Wave",
-    action2: "CharacterArmature|Death",
-    action3: "CharacterArmature|HitReact",
-    action4: "CharacterArmature|Punch",
+    idle: "idle",
+    walk: "walk",
+    run: "run",
+    jump: "jump",
+    jumpIdle: "jumpIdle",
+    jumpLand: "jumpLand",
+    fall: "fall",
+    action1: "pressButton",
+    action2: "pass",
+    // action3: "",
+    // action4: "",
   }
 
   return (
@@ -72,13 +73,20 @@ export default function Experience() {
       <Physics timeStep="vary">
         {/* Character */}
         <KeyboardControls map={keyboardMap}>
-          <Ecctrl name="character" animated position={[0, 7, 0]}>
+          <Ecctrl
+            name="character"
+            animated
+            position={[0, 12, 0]}
+            scale={1}
+            // floatHeight={0.3}
+          >
             <EcctrlAnimation
               characterURL={characterURL}
               animationSet={animationSet}
             >
               <Suspense fallback={null}>
-                <CharacterModel />
+                {/* <CharacterModel /> */}
+                <Avatar />
               </Suspense>
             </EcctrlAnimation>
           </Ecctrl>
