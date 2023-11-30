@@ -10,7 +10,13 @@ export default function Avatar(props) {
   const { nodes, materials, animations } = useGLTF("/models/sk.glb")
   const { actions } = useAnimations(animations, group)
   return (
-    <group ref={group} {...props} dispose={null} position={[0, -0.9, 0]}>
+    <group
+      ref={group}
+      {...props}
+      dispose={null}
+      position={[0, -0.93, 0]}
+      scale={1.1}
+    >
       <group name="Scene">
         <group name="Armature">
           <skinnedMesh
@@ -20,6 +26,7 @@ export default function Avatar(props) {
             skeleton={nodes.EyeLeft.skeleton}
             morphTargetDictionary={nodes.EyeLeft.morphTargetDictionary}
             morphTargetInfluences={nodes.EyeLeft.morphTargetInfluences}
+            castShadow
           />
           <skinnedMesh
             name="EyeRight"
@@ -28,24 +35,28 @@ export default function Avatar(props) {
             skeleton={nodes.EyeRight.skeleton}
             morphTargetDictionary={nodes.EyeRight.morphTargetDictionary}
             morphTargetInfluences={nodes.EyeRight.morphTargetInfluences}
+            castShadow
           />
           <skinnedMesh
             name="Wolf3D_Body"
             geometry={nodes.Wolf3D_Body.geometry}
             material={materials["Wolf3D_Body.009"]}
             skeleton={nodes.Wolf3D_Body.skeleton}
+            castShadow
           />
           <skinnedMesh
             name="Wolf3D_Glasses"
             geometry={nodes.Wolf3D_Glasses.geometry}
             material={materials["Wolf3D_Glasses.009"]}
             skeleton={nodes.Wolf3D_Glasses.skeleton}
+            castShadow
           />
           <skinnedMesh
             name="Wolf3D_Hair"
             geometry={nodes.Wolf3D_Hair.geometry}
             material={materials["Wolf3D_Hair.009"]}
             skeleton={nodes.Wolf3D_Hair.skeleton}
+            castShadow
           />
           <skinnedMesh
             name="Wolf3D_Head"
@@ -54,24 +65,28 @@ export default function Avatar(props) {
             skeleton={nodes.Wolf3D_Head.skeleton}
             morphTargetDictionary={nodes.Wolf3D_Head.morphTargetDictionary}
             morphTargetInfluences={nodes.Wolf3D_Head.morphTargetInfluences}
+            castShadow
           />
           <skinnedMesh
             name="Wolf3D_Outfit_Bottom"
             geometry={nodes.Wolf3D_Outfit_Bottom.geometry}
             material={materials["Wolf3D_Outfit_Bottom.009"]}
             skeleton={nodes.Wolf3D_Outfit_Bottom.skeleton}
+            castShadow
           />
           <skinnedMesh
             name="Wolf3D_Outfit_Footwear"
             geometry={nodes.Wolf3D_Outfit_Footwear.geometry}
             material={materials["Wolf3D_Outfit_Footwear.009"]}
             skeleton={nodes.Wolf3D_Outfit_Footwear.skeleton}
+            castShadow
           />
           <skinnedMesh
             name="Wolf3D_Outfit_Top"
             geometry={nodes.Wolf3D_Outfit_Top.geometry}
             material={materials["Wolf3D_Outfit_Top.009"]}
             skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
+            castShadow
           />
           <skinnedMesh
             name="Wolf3D_Teeth"
@@ -80,363 +95,9 @@ export default function Avatar(props) {
             skeleton={nodes.Wolf3D_Teeth.skeleton}
             morphTargetDictionary={nodes.Wolf3D_Teeth.morphTargetDictionary}
             morphTargetInfluences={nodes.Wolf3D_Teeth.morphTargetInfluences}
+            castShadow
           />
           <primitive object={nodes.Hips} />
-        </group>
-        <group name="Armature001" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
-          <group
-            name="mixamorigHips"
-            position={[0.008, 0.535, -58.875]}
-            rotation={[-Math.PI / 2, 0, 0]}
-          >
-            <group
-              name="mixamorigLeftUpLeg"
-              position={[4.451, -2.896, 0.124]}
-              rotation={[0.015, 0, -3.135]}
-              scale={[1, 1, 0.999]}
-            >
-              <group
-                name="mixamorigLeftLeg"
-                position={[0, 25.483, 0]}
-                rotation={[-0.076, -0.002, 0.021]}
-              >
-                <group
-                  name="mixamorigLeftFoot"
-                  position={[0, 23.823, 0]}
-                  rotation={[1.183, 0.039, -0.094]}
-                >
-                  <group
-                    name="mixamorigLeftToeBase"
-                    position={[0, 8.717, 0]}
-                    rotation={[0.472, -0.116, 0.059]}
-                  >
-                    <group
-                      name="mixamorigLeftToe_End"
-                      position={[0, 3.374, 0]}
-                    />
-                  </group>
-                </group>
-              </group>
-            </group>
-            <group
-              name="mixamorigRightUpLeg"
-              position={[-4.451, -2.896, 0.376]}
-              rotation={[0.035, 0, 3.135]}
-            >
-              <group
-                name="mixamorigRightLeg"
-                position={[0, 25.495, 0]}
-                rotation={[-0.052, 0.001, -0.021]}
-              >
-                <group
-                  name="mixamorigRightFoot"
-                  position={[0, 23.815, 0]}
-                  rotation={[1.187, -0.037, 0.092]}
-                >
-                  <group
-                    name="mixamorigRightToeBase"
-                    position={[0, 8.863, 0]}
-                    rotation={[0.463, 0.116, -0.057]}
-                  >
-                    <group
-                      name="mixamorigRightToe_End"
-                      position={[0, 3.408, 0]}
-                    />
-                  </group>
-                </group>
-              </group>
-            </group>
-            <group
-              name="mixamorigSpine"
-              position={[0, 5.203, -0.588]}
-              rotation={[-0.113, 0, 0]}
-            >
-              <group name="mixamorigSpine1" position={[0, 6.108, 0]}>
-                <group name="mixamorigSpine2" position={[0, 6.981, 0]}>
-                  <group
-                    name="mixamorigLeftShoulder"
-                    position={[3.018, 6.929, -0.105]}
-                    rotation={[1.56, -0.296, -1.607]}
-                  >
-                    <group
-                      name="mixamorigLeftArm"
-                      position={[0, 6.303, 0]}
-                      rotation={[0.552, 0.132, -0.081]}
-                    >
-                      <group
-                        name="mixamorigLeftForeArm"
-                        position={[0, 16.26, 0]}
-                        rotation={[-0.028, -0.005, 0.178]}
-                      >
-                        <group
-                          name="mixamorigLeftHand"
-                          position={[0, 12.026, 0]}
-                          rotation={[0.046, -0.133, -0.149]}
-                        >
-                          <group
-                            name="mixamorigLeftHandIndex1"
-                            position={[-2.524, 7.479, 0.105]}
-                            rotation={[0.001, 0, 0.046]}
-                          >
-                            <group
-                              name="mixamorigLeftHandIndex2"
-                              position={[0, 2.311, 0]}
-                              rotation={[0.039, 0, 0]}
-                            >
-                              <group
-                                name="mixamorigLeftHandIndex3"
-                                position={[0, 2.136, 0]}
-                                rotation={[-0.034, 0, 0]}
-                              >
-                                <group
-                                  name="mixamorigLeftHandIndex4"
-                                  position={[0, 1.868, 0]}
-                                />
-                              </group>
-                            </group>
-                          </group>
-                          <group
-                            name="mixamorigLeftHandMiddle1"
-                            position={[-0.72, 7.377, -0.008]}
-                            rotation={[-0.073, 0, 0.002]}
-                          >
-                            <group
-                              name="mixamorigLeftHandMiddle2"
-                              position={[0.001, 2.533, 0]}
-                              rotation={[0.096, 0, 0]}
-                            >
-                              <group
-                                name="mixamorigLeftHandMiddle3"
-                                position={[0, 2.613, 0]}
-                                rotation={[0.049, 0, 0]}
-                              >
-                                <group
-                                  name="mixamorigLeftHandMiddle4"
-                                  position={[-0.001, 2.317, 0]}
-                                />
-                              </group>
-                            </group>
-                          </group>
-                          <group
-                            name="mixamorigLeftHandPinky1"
-                            position={[2.413, 6.687, 0.122]}
-                            rotation={[-0.005, 0.001, -0.197]}
-                          >
-                            <group
-                              name="mixamorigLeftHandPinky2"
-                              position={[0, 1.956, 0]}
-                              rotation={[0.047, 0, 0]}
-                            >
-                              <group
-                                name="mixamorigLeftHandPinky3"
-                                position={[0, 1.594, 0]}
-                                rotation={[-0.109, 0, 0]}
-                              >
-                                <group
-                                  name="mixamorigLeftHandPinky4"
-                                  position={[0, 1.378, 0]}
-                                />
-                              </group>
-                            </group>
-                          </group>
-                          <group
-                            name="mixamorigLeftHandRing1"
-                            position={[0.831, 7.445, -0.035]}
-                            rotation={[-0.066, 0.009, -0.138]}
-                          >
-                            <group
-                              name="mixamorigLeftHandRing2"
-                              position={[0.001, 2.292, 0]}
-                              rotation={[0.117, 0, 0]}
-                            >
-                              <group
-                                name="mixamorigLeftHandRing3"
-                                position={[0, 2.208, 0]}
-                                rotation={[0.035, 0, 0]}
-                              >
-                                <group
-                                  name="mixamorigLeftHandRing4"
-                                  position={[0, 1.89, 0]}
-                                />
-                              </group>
-                            </group>
-                          </group>
-                          <group
-                            name="mixamorigLeftHandThumb1"
-                            position={[-2.004, 2.294, 0.919]}
-                            rotation={[0.238, 0.174, 0.619]}
-                          >
-                            <group
-                              name="mixamorigLeftHandThumb2"
-                              position={[-0.189, 2.538, 0]}
-                              rotation={[0.033, 0, 0]}
-                            >
-                              <group
-                                name="mixamorigLeftHandThumb3"
-                                position={[0.046, 2.648, 0]}
-                                rotation={[0.007, 0, 0]}
-                              >
-                                <group
-                                  name="mixamorigLeftHandThumb4"
-                                  position={[0.143, 2.262, 0]}
-                                />
-                              </group>
-                            </group>
-                          </group>
-                        </group>
-                      </group>
-                    </group>
-                  </group>
-                  <group
-                    name="mixamorigNeck"
-                    position={[0, 7.854, 0]}
-                    rotation={[0.113, 0, 0]}
-                  >
-                    <group name="mixamorigHead" position={[0, 5.059, 1.2]}>
-                      <group
-                        name="mixamorigHeadTop_End"
-                        position={[0, 27.652, 6.557]}
-                      />
-                    </group>
-                  </group>
-                  <group
-                    name="mixamorigRightShoulder"
-                    position={[-3.018, 6.929, -0.104]}
-                    rotation={[1.56, 0.296, 1.607]}
-                  >
-                    <group
-                      name="mixamorigRightArm"
-                      position={[0, 6.303, 0]}
-                      rotation={[0.552, -0.128, 0.079]}
-                    >
-                      <group
-                        name="mixamorigRightForeArm"
-                        position={[0, 16.26, 0]}
-                        rotation={[-0.027, 0.005, -0.176]}
-                      >
-                        <group
-                          name="mixamorigRightHand"
-                          position={[0, 12.027, 0]}
-                          rotation={[0.042, 0.132, 0.155]}
-                        >
-                          <group
-                            name="mixamorigRightHandIndex1"
-                            position={[2.548, 7.388, 0.147]}
-                            rotation={[-0.007, 0, -0.058]}
-                          >
-                            <group
-                              name="mixamorigRightHandIndex2"
-                              position={[0.002, 2.314, 0]}
-                              rotation={[0.062, 0, 0]}
-                            >
-                              <group
-                                name="mixamorigRightHandIndex3"
-                                position={[-0.001, 2.191, 0]}
-                                rotation={[-0.014, 0, 0]}
-                              >
-                                <group
-                                  name="mixamorigRightHandIndex4"
-                                  position={[-0.001, 1.879, 0]}
-                                />
-                              </group>
-                            </group>
-                          </group>
-                          <group
-                            name="mixamorigRightHandMiddle1"
-                            position={[0.796, 7.598, -0.053]}
-                            rotation={[-0.03, 0, 0.01]}
-                          >
-                            <group
-                              name="mixamorigRightHandMiddle2"
-                              position={[0.004, 2.639, 0]}
-                              rotation={[0.039, 0, 0]}
-                            >
-                              <group
-                                name="mixamorigRightHandMiddle3"
-                                position={[0.001, 2.473, 0]}
-                                rotation={[0.116, 0, 0]}
-                              >
-                                <group
-                                  name="mixamorigRightHandMiddle4"
-                                  position={[-0.005, 2.142, 0]}
-                                />
-                              </group>
-                            </group>
-                          </group>
-                          <group
-                            name="mixamorigRightHandPinky1"
-                            position={[-2.396, 6.739, 0.208]}
-                            rotation={[-0.045, -0.007, 0.146]}
-                          >
-                            <group
-                              name="mixamorigRightHandPinky2"
-                              position={[0.002, 1.929, 0]}
-                              rotation={[0.097, 0, 0]}
-                            >
-                              <group
-                                name="mixamorigRightHandPinky3"
-                                position={[-0.002, 1.586, 0]}
-                                rotation={[-0.044, 0, 0]}
-                              >
-                                <group
-                                  name="mixamorigRightHandPinky4"
-                                  position={[0, 1.32, 0]}
-                                />
-                              </group>
-                            </group>
-                          </group>
-                          <group
-                            name="mixamorigRightHandRing1"
-                            position={[-0.948, 7.664, -0.118]}
-                            rotation={[-0.011, -0.001, 0.045]}
-                          >
-                            <group
-                              name="mixamorigRightHandRing2"
-                              position={[0.001, 2.2, 0]}
-                              rotation={[0.065, 0, 0]}
-                            >
-                              <group
-                                name="mixamorigRightHandRing3"
-                                position={[-0.002, 2.12, 0]}
-                                rotation={[-0.064, 0, 0]}
-                              >
-                                <group
-                                  name="mixamorigRightHandRing4"
-                                  position={[0.001, 1.83, 0]}
-                                />
-                              </group>
-                            </group>
-                          </group>
-                          <group
-                            name="mixamorigRightHandThumb1"
-                            position={[1.965, 2.289, 0.899]}
-                            rotation={[0.241, -0.165, -0.59]}
-                          >
-                            <group
-                              name="mixamorigRightHandThumb2"
-                              position={[0.24, 2.507, 0]}
-                              rotation={[0.076, 0, 0]}
-                            >
-                              <group
-                                name="mixamorigRightHandThumb3"
-                                position={[0.114, 2.649, 0]}
-                                rotation={[-0.124, 0, 0]}
-                              >
-                                <group
-                                  name="mixamorigRightHandThumb4"
-                                  position={[-0.353, 2.274, 0]}
-                                />
-                              </group>
-                            </group>
-                          </group>
-                        </group>
-                      </group>
-                    </group>
-                  </group>
-                </group>
-              </group>
-            </group>
-          </group>
         </group>
       </group>
     </group>

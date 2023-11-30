@@ -28,6 +28,8 @@ export default function Experience() {
     { name: "rightward", keys: ["ArrowRight", "KeyD"] },
     { name: "jump", keys: ["Space"] },
     { name: "run", keys: ["Shift"] },
+    { name: "action1", keys: ["KeyF"] },
+    { name: "action2", keys: ["KeyG"] },
   ]
 
   /**
@@ -45,8 +47,8 @@ export default function Experience() {
     jump: "jump",
     jumpIdle: "jumpIdle",
     jumpLand: "jumpLand",
-    fall: "fall",
-    action1: "pressButton",
+    fall: "jumpIdle",
+    action1: "open",
     action2: "pass",
     // action3: "",
     // action4: "",
@@ -77,15 +79,14 @@ export default function Experience() {
             name="character"
             animated
             position={[0, 12, 0]}
-            scale={1}
             // floatHeight={0.3}
+            colliders={false}
           >
             <EcctrlAnimation
               characterURL={characterURL}
               animationSet={animationSet}
             >
               <Suspense fallback={null}>
-                {/* <CharacterModel /> */}
                 <Avatar />
               </Suspense>
             </EcctrlAnimation>
