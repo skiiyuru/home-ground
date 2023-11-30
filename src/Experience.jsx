@@ -17,6 +17,7 @@ import Lights from "./components/Lights.jsx"
 import Projects from "./components/Projects.jsx"
 import Socials from "./components/Socials.jsx"
 import Stadium from "./components/Stadium.jsx"
+import Stadium2 from "./components/Stadium2.jsx"
 import Ball from "./components/Ball.jsx"
 import Avatar from "./components/Avatar.jsx"
 
@@ -76,11 +77,13 @@ export default function Experience() {
         {/* Character */}
         <KeyboardControls map={keyboardMap}>
           <Ecctrl
+            // capsuleHalfHeight={0.3}
+            // capsuleRadius={0.3}
+            // floatHeight={1}
+            // scale={1.7}
             name="character"
             animated
             position={[0, 12, 0]}
-            // floatHeight={0.3}
-            colliders={false}
           >
             <EcctrlAnimation
               characterURL={characterURL}
@@ -95,11 +98,11 @@ export default function Experience() {
 
         {/* Stadium */}
         <Suspense fallback={null}>
-          <Stadium />
+          <Stadium2 />
           <Ball />
         </Suspense>
 
-        <Bio />
+        {/* <Bio />
 
         <Career rotation-y={Math.PI} />
 
@@ -107,7 +110,7 @@ export default function Experience() {
 
         <Projects />
 
-        <Lab />
+        <Lab /> */}
       </Physics>
     </>
   )

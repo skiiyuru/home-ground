@@ -5,7 +5,7 @@ export default function Ball() {
   return (
     <RigidBody colliders={"ball"} restitution={0.5} friction={1}>
       <Gltf
-        scale={0.5}
+        scale={0.4}
         position-y={2}
         position-x={-3}
         src="/models/ball.glb"

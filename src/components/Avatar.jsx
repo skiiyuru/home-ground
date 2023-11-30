@@ -10,13 +10,7 @@ export default function Avatar(props) {
   const { nodes, materials, animations } = useGLTF("/models/sk.glb")
   const { actions } = useAnimations(animations, group)
   return (
-    <group
-      ref={group}
-      {...props}
-      dispose={null}
-      position={[0, -0.93, 0]}
-      scale={1.1}
-    >
+    <group ref={group} {...props} dispose={null} position={[0, -0.93, 0]}>
       <group name="Scene">
         <group name="Armature">
           <skinnedMesh
