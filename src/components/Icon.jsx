@@ -15,10 +15,16 @@ export default function Icon(props) {
       // friction={1}
       {...props}
     >
-      <mesh scale={1.5} castShadow receiveShadow>
+      <mesh
+        material={props.blockMaterial}
+        geometry={props.iconGeometry}
+        scale={1.5}
+        castShadow
+        receiveShadow
+      >
         {/* <sphereGeometry args={[0.3, 64, 64]} /> */}
-        <boxGeometry args={[0.07, 0.5, 0.5]} />
-        <meshNormalMaterial />
+        {/* <boxGeometry args={[0.07, 0.5, 0.5]} /> */}
+        {/* <meshNormalMaterial /> */}
         <Decal
           // debug // Makes "bounding box" of the decal visible
           position={[-0.15, 0, 0]} // Position of the decal

@@ -36,15 +36,21 @@ const items = [
   },
 ]
 
-export default function Lab() {
+export default function Lab(props) {
   return (
     <>
       <group position={[7.2, 2.99, 3.3]} rotation-y={degToRad(90)} scale={0.9}>
-        <LetterBlocks str={"LAB"} />
+        <LetterBlocks blockMaterial={props.blockMaterial} str={"LAB"} />
       </group>
 
       {items.map((item) => (
-        <Card key={item.title + "-lab"} data={item} position={item.position} />
+        <Card
+          key={item.title + "-lab"}
+          data={item}
+          position={item.position}
+          geometry={props.geometry}
+          material={props.material}
+        />
       ))}
     </>
   )

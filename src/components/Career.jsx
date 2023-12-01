@@ -10,7 +10,12 @@ DESIGN CONSULTANT | 2020 - PRESENT
 export default function Career(props) {
   return (
     <group position-z={-6} position-y={1.56} {...props}>
-      <LetterBlocks str={"CAREER"} position-x={1.5} scale={0.9} />
+      <LetterBlocks
+        blockMaterial={props.blockMaterial}
+        str={"CAREER"}
+        position-x={1.5}
+        scale={0.9}
+      />
 
       <FlatText
         scale={0.27}

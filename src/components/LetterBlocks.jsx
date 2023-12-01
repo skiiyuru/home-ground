@@ -6,13 +6,6 @@ import {
   MeshNormalMaterial,
 } from "three"
 
-ColorManagement.enabled = false
-const material = new MeshNormalMaterial({
-  // color: "white",
-  // metalness: 0,
-  // roughness: 0,
-})
-
 function LetterBlock(props) {
   return (
     <RigidBody
@@ -24,7 +17,7 @@ function LetterBlock(props) {
       // type="fixed"
     >
       <Text3D
-        material={material}
+        material={props.blockMaterial}
         font={"./fonts/bebas.json"}
         size={0.8}
         height={0.2}
@@ -51,7 +44,12 @@ export default function LetterBlocks(props) {
     <group {...props}>
       {letters.length &&
         letters.map((letter, idx) => (
-          <LetterBlock key={idx} value={letter} position={[-idx * 0.5, 0, 0]} />
+          <LetterBlock
+            blockMaterial={props.blockMaterial}
+            key={idx}
+            value={letter}
+            position={[-idx * 0.5, 0, 0]}
+          />
         ))}
     </group>
   )

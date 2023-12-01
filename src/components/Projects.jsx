@@ -38,7 +38,7 @@ const items = [
   },
 ]
 
-export default function Projects() {
+export default function Projects(props) {
   return (
     <>
       <group
@@ -47,11 +47,17 @@ export default function Projects() {
         // rotation-z={degToRad(10)}
         scale={0.9}
       >
-        <LetterBlocks str={"PROJECTS"} />
+        <LetterBlocks blockMaterial={props.blockMaterial} str={"PROJECTS"} />
       </group>
 
       {items.map((item) => (
-        <Card key={item.title} data={item} position={item.position} />
+        <Card
+          key={item.title}
+          data={item}
+          position={item.position}
+          geometry={props.geometry}
+          material={props.material}
+        />
       ))}
     </>
   )

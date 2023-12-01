@@ -9,8 +9,8 @@ export default function Ball() {
       // friction={1}
       position-y={7}
       position-x={-3}
-      angularDamping={1}
-      linearDamping={1}
+      angularDamping={0.5}
+      linearDamping={0.5}
     >
       <Gltf scale={0.4} src="/models/ball.glb" castShadow />
     </RigidBody>

@@ -1,4 +1,7 @@
+import { BoxGeometry } from "three"
 import Icon from "./Icon"
+
+const iconGeometry = new BoxGeometry(0.07, 0.5, 0.5)
 
 const items = [
   {
@@ -23,7 +26,7 @@ const items = [
   },
 ]
 
-export default function Socials() {
+export default function Socials(props) {
   return (
     <>
       {items.map(({ src, z, label }, idx) => (
@@ -33,7 +36,13 @@ export default function Socials() {
           position-z={z}
           position-y={-0.45}
         >
-          <Icon src={src} position-y={2.4} label={label} />
+          <Icon
+            blockMaterial={props.blockMaterial}
+            iconGeometry={iconGeometry}
+            src={src}
+            position-y={2.4}
+            label={label}
+          />
         </group>
       ))}
     </>

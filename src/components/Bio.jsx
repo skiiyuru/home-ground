@@ -5,8 +5,12 @@ export default function Bio(props) {
   return (
     <group position-z={6} position-y={1.56} {...props}>
       <group position-x={1.5} scale={0.9}>
-        <LetterBlocks str={"KIIYURU"} position-y={1.3} />
-        <LetterBlocks str={"STEPHEN"} />
+        <LetterBlocks
+          blockMaterial={props.blockMaterial}
+          str={"KIIYURU"}
+          position-y={1.3}
+        />
+        <LetterBlocks blockMaterial={props.blockMaterial} str={"STEPHEN"} />
       </group>
 
       <FlatText position-z={-0.7} scale={0.45} value={"CREATIVE DEVELOPER"} />

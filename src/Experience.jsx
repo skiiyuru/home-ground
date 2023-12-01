@@ -12,6 +12,18 @@ import Lights from "./components/Lights.jsx"
 import Projects from "./components/Projects.jsx"
 import Socials from "./components/Socials.jsx"
 import Stadium from "./components/Stadium.jsx"
+import CharacterModel from "./components/CharacterModel.jsx"
+import {
+  BoxGeometry,
+  MeshBasicMaterial,
+  ColorManagement,
+  MeshNormalMaterial,
+} from "three"
+
+ColorManagement.enabled = false
+const cardGeometry = new BoxGeometry(0.05, 0.4, 0.7)
+const cardMaterial = new MeshBasicMaterial({ color: "#88A7B0" })
+const blockMaterial = new MeshNormalMaterial({})
 
 export default function Experience() {
   const keyboardMap = [
@@ -28,23 +40,38 @@ export default function Experience() {
   /**
    * Character url preset
    */
-  const characterURL = "/models/sk.glb"
+  // const characterURL = "/models/sk.glb"
+  const characterURL = "/models/Demon.glb"
 
   /**
    * Character animation set preset
    */
+  // const animationSet = {
+  //   idle: "idle",
+  //   walk: "walk",
+  //   run: "run",
+  //   jump: "jump",
+  //   jumpIdle: "jumpIdle",
+  //   jumpLand: "jumpLand",
+  //   fall: "jumpIdle",
+  //   action1: "open",
+  //   action2: "pass",
+  //   // action3: "",
+  //   // action4: "",
+  // }
+
   const animationSet = {
-    idle: "idle",
-    walk: "walk",
-    run: "run",
-    jump: "jump",
-    jumpIdle: "jumpIdle",
-    jumpLand: "jumpLand",
-    fall: "jumpIdle",
-    action1: "open",
-    action2: "pass",
-    // action3: "",
-    // action4: "",
+    idle: "CharacterArmature|Idle",
+    walk: "CharacterArmature|Walk",
+    run: "CharacterArmature|Run",
+    jump: "CharacterArmature|Jump",
+    jumpIdle: "CharacterArmature|Jump_Idle",
+    jumpLand: "CharacterArmature|Jump_Land",
+    fall: "CharacterArmature|Duck", // This is for falling from high sky
+    action1: "CharacterArmature|Wave",
+    action2: "CharacterArmature|Death",
+    action3: "CharacterArmature|HitReact",
+    action4: "CharacterArmature|Punch",
   }
 
   return (
@@ -69,40 +96,41 @@ export default function Experience() {
         {/* Character */}
         <Suspense fallback={null}>
           <KeyboardControls map={keyboardMap}>
-            <Ecctrl
-              // capsuleHalfHeight={0.3}
-              // capsuleRadius={0.3}
-              // floatHeight={1}
-              // scale={1.7}
-              name="character"
-              animated
-              position={[0, 7, 0]}
-              restitution={0}
-            >
+            <Ecctrl name="character" animated position={[2, 12, 0]}>
               <EcctrlAnimation
                 characterURL={characterURL}
                 animationSet={animationSet}
               >
-                <Avatar />
+                {/* <Avatar /> */}
+                <CharacterModel />
               </EcctrlAnimation>
             </Ecctrl>
           </KeyboardControls>
         </Suspense>
 
         <Suspense fallback={null}>
+          {/* <Original /> */}
           <Stadium />
-          <Ball />
         </Suspense>
+        <Ball />
 
-        <Bio />
+        <Bio blockMaterial={blockMaterial} />
 
-        <Career rotation-y={Math.PI} />
+        <Career blockMaterial={blockMaterial} rotation-y={Math.PI} />
 
-        <Socials />
+        <Socials blockMaterial={blockMaterial} />
 
-        <Projects />
+        <Projects
+          blockMaterial={blockMaterial}
+          geometry={cardGeometry}
+          material={cardMaterial}
+        />
 
-        <Lab />
+        <Lab
+          blockMaterial={blockMaterial}
+          geometry={cardGeometry}
+          material={cardMaterial}
+        />
       </Physics>
     </>
   )

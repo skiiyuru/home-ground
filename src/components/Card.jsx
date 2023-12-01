@@ -15,10 +15,16 @@ export default function Card(props) {
       friction={1}
       {...props}
     >
-      <mesh scale={4} castShadow receiveShadow>
+      <mesh
+        geometry={props.geometry}
+        material={props.material}
+        scale={4}
+        castShadow
+        receiveShadow
+      >
         {/* <sphereGeometry args={[0.3, 64, 64]} /> */}
-        <boxGeometry args={[0.05, 0.4, 0.7]} />
-        <meshBasicMaterial color={"#88A7B0"} />
+        {/* <boxGeometry args={[0.05, 0.4, 0.7]} />
+        <meshBasicMaterial color={"#88A7B0"} /> */}
         {/* <meshNormalMaterial /> */}
         <Decal
           // debug // Makes "bounding box" of the decal visible
