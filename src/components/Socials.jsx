@@ -1,5 +1,3 @@
-import { degToRad } from "three/src/math/MathUtils"
-import FlatText from "./FlatText"
 import Icon from "./Icon"
 
 const items = [
@@ -29,15 +27,13 @@ export default function Socials() {
   return (
     <>
       {items.map(({ src, z, label }, idx) => (
-        <group key={"s" + idx} position-x={5.5} position-z={z}>
+        <group
+          key={"s" + idx}
+          position-x={4.7}
+          position-z={z}
+          position-y={-0.45}
+        >
           <Icon src={src} position-y={2.4} label={label} />
-          {/* <FlatText
-            position-x={-0.5}
-            rotation-z={degToRad(-90)}
-            position-y={1.9}
-            scale={0.25}
-            value={label}
-          /> */}
         </group>
       ))}
     </>

@@ -7,7 +7,7 @@ const items = [
     title: "Imla",
     description: "A transcription tool fine-tuned for African languages.",
     link: "https://imla.io/",
-    position: [10, 5, -6.5],
+    position: [8.5, 4.2, -5.6],
     img: "./images/imla.png",
     roles: ["Design", "UI Development"],
   },
@@ -15,7 +15,7 @@ const items = [
     title: "Longhorn Digital",
     description: "Interactive STEM content that supplements text books.",
     link: "https://longhornpublishers.com/longhorn-digital/",
-    position: [10, 5, -2.5],
+    position: [8.5, 4.2, -2.5],
     img: "./images/longhorn.png",
     roles: ["Design", "UI Development"],
   },
@@ -23,7 +23,7 @@ const items = [
     title: "Oxford University Press",
     description: "Interactive STEM content that supplements text books.",
     link: "https://www.oxford.co.ke/",
-    position: [12.5, 6.75, -6.5],
+    position: [10.8, 5.7, -5.6],
     img: "./images/oxford.png",
     roles: ["Design", "UI Development"],
   },
@@ -32,7 +32,7 @@ const items = [
     description:
       "Fostering children’s curiosity and interest in STEM through fun and interactive experiences.",
     link: "imla.io",
-    position: [12.5, 6.75, -2.5],
+    position: [10.8, 5.7, -2.5],
     img: "./images/discovery.png",
     roles: ["Co-founder", "Teacher"],
   },
@@ -41,7 +41,12 @@ const items = [
 export default function Projects() {
   return (
     <>
-      <group position={[8, 2.5, -6]} rotation-y={degToRad(90)} scale={0.9}>
+      <group
+        position={[7.2, 2.99, -6]}
+        rotation-y={degToRad(90)}
+        // rotation-z={degToRad(10)}
+        scale={0.9}
+      >
         <LetterBlocks str={"PROJECTS"} />
       </group>
 

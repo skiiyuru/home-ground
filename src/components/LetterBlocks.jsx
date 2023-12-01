@@ -19,8 +19,9 @@ function LetterBlock(props) {
       colliders="cuboid"
       position={props.position}
       rotation-y={Math.PI}
-      restitution={0.2}
+      restitution={0}
       friction={1}
+      // type="fixed"
     >
       <Text3D
         material={material}
@@ -29,8 +30,8 @@ function LetterBlock(props) {
         height={0.2}
         curveSegments={12}
         bevelEnabled
-        bevelThickness={0.02}
-        bevelSize={0.02}
+        bevelThickness={0.035}
+        bevelSize={0.03}
         bevelOffset={0}
         bevelSegments={5}
         castShadow
@@ -50,11 +51,7 @@ export default function LetterBlocks(props) {
     <group {...props}>
       {letters.length &&
         letters.map((letter, idx) => (
-          <LetterBlock
-            key={idx}
-            value={letter}
-            position={[-idx * 0.5, 1.95, 0]}
-          />
+          <LetterBlock key={idx} value={letter} position={[-idx * 0.5, 0, 0]} />
         ))}
     </group>
   )

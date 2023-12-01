@@ -1,25 +1,17 @@
-import {
-  Gltf,
-  KeyboardControls,
-  Sky,
-  SoftShadows,
-  Stars,
-} from "@react-three/drei"
-import { Physics, RigidBody } from "@react-three/rapier"
+import { KeyboardControls, Stars } from "@react-three/drei"
+import { Physics } from "@react-three/rapier"
 import Ecctrl, { EcctrlAnimation } from "ecctrl"
 import { Perf } from "r3f-perf"
 import { Suspense } from "react"
+import Avatar from "./components/Avatar.jsx"
+import Ball from "./components/Ball.jsx"
 import Bio from "./components/Bio.jsx"
 import Career from "./components/Career.jsx"
-import CharacterModel from "./components/CharacterModel.jsx"
 import Lab from "./components/Lab.jsx"
 import Lights from "./components/Lights.jsx"
 import Projects from "./components/Projects.jsx"
 import Socials from "./components/Socials.jsx"
 import Stadium from "./components/Stadium.jsx"
-import Stadium2 from "./components/Stadium2.jsx"
-import Ball from "./components/Ball.jsx"
-import Avatar from "./components/Avatar.jsx"
 
 export default function Experience() {
   const keyboardMap = [
@@ -75,34 +67,34 @@ export default function Experience() {
 
       <Physics timeStep="vary">
         {/* Character */}
-        <KeyboardControls map={keyboardMap}>
-          <Ecctrl
-            // capsuleHalfHeight={0.3}
-            // capsuleRadius={0.3}
-            // floatHeight={1}
-            // scale={1.7}
-            name="character"
-            animated
-            position={[0, 12, 0]}
-          >
-            <EcctrlAnimation
-              characterURL={characterURL}
-              animationSet={animationSet}
-            >
-              <Suspense fallback={null}>
-                <Avatar />
-              </Suspense>
-            </EcctrlAnimation>
-          </Ecctrl>
-        </KeyboardControls>
-
-        {/* Stadium */}
         <Suspense fallback={null}>
-          <Stadium2 />
+          <KeyboardControls map={keyboardMap}>
+            <Ecctrl
+              // capsuleHalfHeight={0.3}
+              // capsuleRadius={0.3}
+              // floatHeight={1}
+              // scale={1.7}
+              name="character"
+              animated
+              position={[0, 7, 0]}
+              restitution={0}
+            >
+              <EcctrlAnimation
+                characterURL={characterURL}
+                animationSet={animationSet}
+              >
+                <Avatar />
+              </EcctrlAnimation>
+            </Ecctrl>
+          </KeyboardControls>
+        </Suspense>
+
+        <Suspense fallback={null}>
+          <Stadium />
           <Ball />
         </Suspense>
 
-        {/* <Bio />
+        <Bio />
 
         <Career rotation-y={Math.PI} />
 
@@ -110,7 +102,7 @@ export default function Experience() {
 
         <Projects />
 
-        <Lab /> */}
+        <Lab />
       </Physics>
     </>
   )

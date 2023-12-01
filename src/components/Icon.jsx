@@ -10,18 +10,18 @@ export default function Icon(props) {
   return (
     <RigidBody
       type="fixed"
-      // colliders="cuboid"
-      restitution={0.2}
-      friction={1}
+      colliders="cuboid"
+      // restitution={0.2}
+      // friction={1}
       {...props}
     >
       <mesh scale={1.5} castShadow receiveShadow>
         {/* <sphereGeometry args={[0.3, 64, 64]} /> */}
-        <boxGeometry args={[0.15, 0.5, 0.5]} />
+        <boxGeometry args={[0.07, 0.5, 0.5]} />
         <meshNormalMaterial />
         <Decal
           // debug // Makes "bounding box" of the decal visible
-          position={[0, 0, 0]} // Position of the decal
+          position={[-0.15, 0, 0]} // Position of the decal
           rotation={[0, degToRad(270), 0]} // Rotation of the decal (can be a vector or a degree in radians)
           scale={0.4} // Scale of the decal
         >
@@ -35,10 +35,8 @@ export default function Icon(props) {
           <Html
             className="bg-slate-800/75 text-white text-center tracking-wider text-lg p-3 rounded-xl whitespace-nowrap select-none"
             position={[0, 0, 0]}
-            // wrapperClass="bg-slate-800"
             center
             distanceFactor={8}
-            // occlude={[boxRef, sphereRef]}
           >
             Press "F" to open
           </Html>

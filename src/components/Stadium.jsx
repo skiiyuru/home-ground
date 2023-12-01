@@ -10,102 +10,92 @@ export default function Stadium(props) {
   const { nodes, materials } = useGLTF("/models/stadium.glb")
   return (
     <RigidBody type="fixed" colliders="trimesh" restitution={0.2} friction={1}>
-      <group scale={0.7} {...props} dispose={null}>
-        <group position={[0, 3.484, 0.254]}>
-          <group position={[0, -4.79, 0]}>
-            {/* pitch  barriers */}
-            <mesh
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002.geometry}
-              material={materials.orange}
-            />
-            <mesh
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002_6.geometry}
-              material={materials.blue}
-            />
-            <mesh
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002_4.geometry}
-              material={materials.Fence}
-            />
-
-            {/* lights face */}
-            <mesh
-              geometry={nodes.Level10Visuals_orange_0002_1.geometry}
-              material={materials.light}
-            />
-
-            {/* light poles */}
-            <mesh
-              castShadow
-              geometry={nodes.Level10Visuals_orange_0002_2.geometry}
-              material={materials.Level10VisualsExtra2}
-            />
-
-            {/* Seats barrier */}
-            <mesh
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002_3.geometry}
-              material={materials["Default-Material"]}
-            />
-            <mesh
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002_5.geometry}
-              material={materials.No_Name}
-            />
-
-            {/* Goals */}
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002_7.geometry}
-              material={materials.goal_blue}
-            />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002_8.geometry}
-              material={materials.goal_orange}
-            />
-            <mesh
-              castShadow
-              geometry={nodes.Level10Visuals_orange_0002_9.geometry}
-              material={materials.goalpadding_blue}
-            />
-            <mesh
-              geometry={nodes.Level10Visuals_orange_0002_10.geometry}
-              material={materials.goalpadding_orange}
-            />
-            <mesh
-              geometry={nodes.Level10Visuals_orange_0002_15.geometry}
-              material={materials.level10netting}
-            />
-
-            {/* Pitch lines */}
-            <mesh
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002_11.geometry}
-              material={materials.lines}
-            />
-            <mesh
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002_12.geometry}
-              material={materials.soccerfield}
-            />
-
-            {/* stands */}
-            <mesh
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002_13.geometry}
-              material={materials.stands_seating3}
-            />
-            <mesh
-              receiveShadow
-              geometry={nodes.Level10Visuals_orange_0002_14.geometry}
-              material={materials.stands_wall}
-            />
-          </group>
+      <group scale={0.6} {...props} dispose={null}>
+        <group rotation={[Math.PI / 2, 0, 2.881]} scale={6.105}>
+          <mesh
+            castShadow
+            geometry={nodes.group69367443.geometry}
+            material={materials.mat21}
+          />
+          <mesh
+            receiveShadow
+            geometry={nodes.group69367443_1.geometry}
+            material={materials.orange}
+          />
+          <mesh
+            geometry={nodes.group69367443_2.geometry}
+            material={materials.light}
+          />
+          <mesh
+            castShadow
+            geometry={nodes.group69367443_3.geometry}
+            material={materials.Level10VisualsExtra2}
+          />
+          <mesh
+            receiveShadow
+            geometry={nodes.group69367443_4.geometry}
+            material={materials["Default-Material"]}
+          />
+          <mesh
+            receiveShadow
+            geometry={nodes.group69367443_5.geometry}
+            material={materials.Fence}
+          />
+          <mesh
+            receiveShadow
+            geometry={nodes.group69367443_6.geometry}
+            material={materials.No_Name}
+          />
+          <mesh
+            receiveShadow
+            geometry={nodes.group69367443_7.geometry}
+            material={materials.blue}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.group69367443_8.geometry}
+            material={materials.goal_blue}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.group69367443_9.geometry}
+            material={materials.goal_orange}
+          />
+          <mesh
+            castShadow
+            geometry={nodes.group69367443_10.geometry}
+            material={materials.goalpadding_blue}
+          />
+          <mesh
+            geometry={nodes.group69367443_11.geometry}
+            material={materials.goalpadding_orange}
+          />
+          <mesh
+            receiveShadow
+            geometry={nodes.group69367443_12.geometry}
+            material={materials.lines}
+          />
+          <mesh
+            receiveShadow
+            geometry={nodes.group69367443_13.geometry}
+            material={materials.soccerfield}
+          />
+          <mesh
+            receiveShadow
+            geometry={nodes.group69367443_14.geometry}
+            material={materials.stands_seating3}
+          />
+          <mesh
+            receiveShadow
+            geometry={nodes.group69367443_15.geometry}
+            material={materials.stands_wall}
+          />
+          <mesh
+            geometry={nodes.group69367443_16.geometry}
+            material={materials.level10netting}
+          />
         </group>
       </group>
     </RigidBody>

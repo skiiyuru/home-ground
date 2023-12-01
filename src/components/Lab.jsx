@@ -8,7 +8,7 @@ const items = [
     description:
       "A fun obstacle race game. Can you beat the 11.5 sec high score?",
     link: "https://sk-marble-race.vercel.app/",
-    position: [10, 5, 2.9],
+    position: [8.5, 4.2, 5.5],
     img: "./images/race.png",
   },
   {
@@ -16,14 +16,14 @@ const items = [
     description:
       "A deep learning model that identifies the breed of a dog from an image.",
     link: "https://dog-vision.streamlit.app/",
-    position: [10, 5, 6.9],
+    position: [8.5, 4.2, 2.5],
     img: "./images/dog.png",
   },
   {
     title: "Portal",
     description: "Creating a custom shader using perlin noise.",
     link: "https://kiiyuru-portal.vercel.app/",
-    position: [12.5, 6.75, 2.9],
+    position: [10.8, 5.7, 5.5],
     img: "./images/portal.png",
   },
   {
@@ -31,7 +31,7 @@ const items = [
     description:
       "A deep learning model that identifies whether a person in an image is wearing a facemask or not.",
     link: "https://huggingface.co/spaces/skiiyuru/facemask_detector",
-    position: [12.5, 6.75, 6.9],
+    position: [10.8, 5.7, 2.5],
     img: "./images/mask.png",
   },
 ]
@@ -39,7 +39,7 @@ const items = [
 export default function Lab() {
   return (
     <>
-      <group position={[8, 2, 4]} rotation-y={degToRad(90)} scale={0.9}>
+      <group position={[7.2, 2.99, 3.3]} rotation-y={degToRad(90)} scale={0.9}>
         <LetterBlocks str={"LAB"} />
       </group>
 

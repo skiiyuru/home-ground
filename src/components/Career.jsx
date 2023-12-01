@@ -9,10 +9,15 @@ DESIGN CONSULTANT | 2020 - PRESENT
 
 export default function Career(props) {
   return (
-    <group position-z={-6.5} {...props}>
+    <group position-z={-6} position-y={1.56} {...props}>
       <LetterBlocks str={"CAREER"} position-x={1.5} scale={0.9} />
 
-      <FlatText scale={0.27} value={items} position-z={-1.5} position-y={1.9} />
+      <FlatText
+        scale={0.27}
+        value={items}
+        position-z={-1.3}
+        textAlign={"center"}
+      />
     </group>
   )
 }

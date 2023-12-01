@@ -14,7 +14,7 @@ const floodLightConfig = {
   anglePower: 5,
   intensity: 1.5,
   opacity: 0.2,
-  "shadow-mapSize": [1024 * 2, 1024 * 2],
+  "shadow-mapSize": [1024 * 1, 1024 * 1],
 }
 
 export default function Lights() {
@@ -55,11 +55,7 @@ export default function Lights() {
       {/* <SpotLight position={[6.1, 5.2, 10]} {...floodLightConfig} /> */}
       {/* <SpotLight position={[-6.1, 5.2, 10]} {...floodLightConfig} /> */}
       {/*  */}
-      <SpotLight
-        ref={ref}
-        position={[-10.5, 6.5, 13.3]}
-        {...floodLightConfig}
-      />
+      <SpotLight ref={ref} position={[-10.7, 8, 13.1]} {...floodLightConfig} />
       {/* <SpotLight ref={ref} position={[12.6, 9.2, 16]} {...floodLightConfig} /> */}
 
       {/* back */}
