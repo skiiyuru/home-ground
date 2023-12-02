@@ -3,6 +3,8 @@ import { CuboidCollider, RigidBody } from "@react-three/rapier"
 import { useState } from "react"
 import { degToRad } from "three/src/math/MathUtils"
 
+const size = 4
+
 export default function Card(props) {
   const texture = useTexture(props?.data?.img ?? "./textures/github.png")
   const [showHint, setShowHint] = useState(false)
@@ -14,23 +16,20 @@ export default function Card(props) {
       restitution={0.2}
       friction={1}
       {...props}
+      rotation-y={degToRad(180)}
     >
       <mesh
         geometry={props.geometry}
         material={props.material}
-        scale={4}
+        scale={[0.05 * size, 0.4 * size, 0.7 * size]}
         castShadow
         receiveShadow
       >
-        {/* <sphereGeometry args={[0.3, 64, 64]} /> */}
-        {/* <boxGeometry args={[0.05, 0.4, 0.7]} />
-        <meshBasicMaterial color={"#88A7B0"} /> */}
-        {/* <meshNormalMaterial /> */}
         <Decal
           // debug // Makes "bounding box" of the decal visible
-          position={[-0.2, 0.03, 0]} // Position of the decal
-          rotation={[0, degToRad(270), 0]} // Rotation of the decal (can be a vector or a degree in radians)
-          scale={[0.7, 0.35, 0.4]} // Scale of the decal
+          position={[0.5, 0.02, 0]} // Position of the decal
+          rotation={[0, degToRad(90), 0]} // Rotation of the decal (can be a vector or a degree in radians)
+          scale={[1, 0.95, 1]} // Scale of the decal
         >
           <meshBasicMaterial
             map={texture}
@@ -40,7 +39,7 @@ export default function Card(props) {
         </Decal>
         {showHint && (
           <Html
-            position={[0, -0.4, 0]}
+            position={[0, -1, 0]}
             className="bg-slate-900/75 text-white 
              tracking-wider  p-3 
             rounded-lg select-none w-72 flex flex-col gap-3"

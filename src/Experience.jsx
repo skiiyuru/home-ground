@@ -21,7 +21,7 @@ import {
 } from "three"
 
 ColorManagement.enabled = false
-const cardGeometry = new BoxGeometry(0.05, 0.4, 0.7)
+const boxGeometry = new BoxGeometry()
 const cardMaterial = new MeshBasicMaterial({ color: "#88A7B0" })
 const blockMaterial = new MeshNormalMaterial({})
 
@@ -118,17 +118,17 @@ export default function Experience() {
 
         <Career blockMaterial={blockMaterial} rotation-y={Math.PI} />
 
-        <Socials blockMaterial={blockMaterial} />
+        <Socials geometry={boxGeometry} blockMaterial={blockMaterial} />
 
         <Projects
           blockMaterial={blockMaterial}
-          geometry={cardGeometry}
+          geometry={boxGeometry}
           material={cardMaterial}
         />
 
         <Lab
           blockMaterial={blockMaterial}
-          geometry={cardGeometry}
+          geometry={boxGeometry}
           material={cardMaterial}
         />
       </Physics>

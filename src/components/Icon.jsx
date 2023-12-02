@@ -3,6 +3,8 @@ import { CuboidCollider, RigidBody } from "@react-three/rapier"
 import { useState } from "react"
 import { degToRad } from "three/src/math/MathUtils"
 
+const size = 1.5
+
 export default function Icon(props) {
   const texture = useTexture(props.src ?? "./textures/github.png")
   const [showHint, setShowHint] = useState(false)
@@ -18,7 +20,7 @@ export default function Icon(props) {
       <mesh
         material={props.blockMaterial}
         geometry={props.iconGeometry}
-        scale={1.5}
+        scale={[0.1 * size, 0.5 * size, 0.5 * size]}
         castShadow
         receiveShadow
       >
@@ -29,7 +31,7 @@ export default function Icon(props) {
           // debug // Makes "bounding box" of the decal visible
           position={[-0.15, 0, 0]} // Position of the decal
           rotation={[0, degToRad(270), 0]} // Rotation of the decal (can be a vector or a degree in radians)
-          scale={0.4} // Scale of the decal
+          scale={0.8} // Scale of the decal
         >
           <meshBasicMaterial
             map={texture}
