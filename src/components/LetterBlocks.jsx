@@ -1,10 +1,5 @@
 import { Text3D } from "@react-three/drei"
 import { RigidBody } from "@react-three/rapier"
-import {
-  MeshStandardMaterial,
-  ColorManagement,
-  MeshNormalMaterial,
-} from "three"
 
 function LetterBlock(props) {
   return (

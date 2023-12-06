@@ -1,12 +1,12 @@
-import { Decal, Html, useTexture } from "@react-three/drei"
+import { Html } from "@react-three/drei"
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
 import { useState } from "react"
 import { degToRad } from "three/src/math/MathUtils"
+import Sticker from "./Sticker"
 
 const size = 4
 
 export default function Card(props) {
-  const texture = useTexture(props?.data?.img ?? "./textures/github.png")
   const [showHint, setShowHint] = useState(false)
 
   return (
@@ -16,7 +16,7 @@ export default function Card(props) {
       restitution={0.2}
       friction={1}
       {...props}
-      rotation-y={degToRad(180)}
+      rotation-y={props.forSkills ? degToRad(240) : degToRad(180)}
     >
       <mesh
         geometry={props.geometry}
@@ -25,18 +25,13 @@ export default function Card(props) {
         castShadow
         receiveShadow
       >
-        <Decal
-          // debug // Makes "bounding box" of the decal visible
+        <Sticker
           position={[0.5, 0.02, 0]} // Position of the decal
           rotation={[0, degToRad(90), 0]} // Rotation of the decal (can be a vector or a degree in radians)
           scale={[1, 0.95, 1]} // Scale of the decal
-        >
-          <meshBasicMaterial
-            map={texture}
-            polygonOffset
-            polygonOffsetFactor={-1} // The material should take precedence over the original
-          />
-        </Decal>
+          texture={props.data.texture}
+        />
+
         {showHint && (
           <Html
             position={[0, -1, 0]}
@@ -47,11 +42,14 @@ export default function Card(props) {
             distanceFactor={8}
             // occlude={[boxRef, sphereRef]}
           >
-            <div className="text-2xl">{props?.data?.title}</div>
-            <div>{props?.data?.description}</div>
-            <div className="flex gap-2">
-              {props?.data?.roles &&
-                props?.data?.roles.map((role, idx) => (
+            {props?.data?.title && (
+              <div className="text-2xl">{props?.data?.title}</div>
+            )}
+            {props?.data?.description && <div>{props?.data?.description}</div>}
+
+            {props?.data?.roles && (
+              <div className="flex gap-2">
+                {props?.data?.roles.map((role, idx) => (
                   <div
                     key={role + idx}
                     className=" border-solid border-2
@@ -62,7 +60,32 @@ export default function Card(props) {
                     {role}
                   </div>
                 ))}
-            </div>
+              </div>
+            )}
+
+            {props?.data?.sections && (
+              <div className="flex flex-col gap-3">
+                {props?.data?.sections.map((section) => (
+                  <div key={section.title}>
+                    <div className="">{section.title}</div>
+                    <div className="flex gap-2">
+                      {section.children.map((label, idx) => (
+                        <div
+                          key={label + idx}
+                          className=" border-solid border-2
+                          border-white text-sm px-2 py-1 
+                          rounded-lg justify
+                          "
+                        >
+                          {label}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
             {props?.data?.link && (
               <div className="text-gray-400 text-sm">Press "F" to open</div>
             )}

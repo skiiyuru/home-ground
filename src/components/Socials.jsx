@@ -1,32 +1,39 @@
+import { useTexture } from "@react-three/drei"
 import Icon from "./Icon"
 
-const items = [
-  {
-    src: "./textures/github.png",
-    z: 1,
-    label: "github",
-  },
-  {
-    src: "./textures/mail.png",
-    z: 3,
-    label: "mail",
-  },
-  {
-    src: "./textures/in.png",
-    z: -1,
-    label: "in",
-  },
-  {
-    src: "./textures/x.png",
-    z: -3,
-    label: "x",
-  },
-]
-
 export default function Socials(props) {
+  const [github, mail, linkedIn, twitter] = useTexture([
+    "./images/github.png",
+    "./images/mail.png",
+    "./images/in.png",
+    "./images/x.png",
+  ])
+
+  const items = [
+    {
+      texture: github,
+      z: 1,
+      label: "github",
+    },
+    {
+      texture: mail,
+      z: 3,
+      label: "mail",
+    },
+    {
+      texture: linkedIn,
+      z: -1,
+      label: "in",
+    },
+    {
+      texture: twitter,
+      z: -3,
+      label: "x",
+    },
+  ]
   return (
     <>
-      {items.map(({ src, z, label }, idx) => (
+      {items.map(({ texture, z, label }, idx) => (
         <group
           key={"s" + idx}
           position-x={4.7}
@@ -36,7 +43,7 @@ export default function Socials(props) {
           <Icon
             blockMaterial={props.blockMaterial}
             iconGeometry={props.geometry}
-            src={src}
+            texture={texture}
             position-y={2.4}
             label={label}
           />

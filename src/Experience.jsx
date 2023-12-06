@@ -19,10 +19,15 @@ import {
   ColorManagement,
   MeshNormalMaterial,
 } from "three"
+import Skills from "./components/Skills.jsx"
+import FanDecals from "./components/FanDecals.jsx"
 
 ColorManagement.enabled = false
 const boxGeometry = new BoxGeometry()
-const cardMaterial = new MeshBasicMaterial({ color: "#88A7B0" })
+const cardMaterial = new MeshBasicMaterial({
+  color: "#88A7B0",
+  transparent: true,
+})
 const blockMaterial = new MeshNormalMaterial({})
 
 export default function Experience() {
@@ -131,6 +136,14 @@ export default function Experience() {
           geometry={boxGeometry}
           material={cardMaterial}
         />
+
+        <Skills
+          blockMaterial={blockMaterial}
+          geometry={boxGeometry}
+          material={cardMaterial}
+        />
+
+        <FanDecals material={cardMaterial} geometry={boxGeometry} />
       </Physics>
     </>
   )

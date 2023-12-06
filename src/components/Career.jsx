@@ -1,11 +1,11 @@
-import LetterBlocks from "./LetterBlocks"
-import FlatText from "./FlatText"
+import LetterBlocks from "./LetterBlocks";
+import FlatText from "./FlatText";
 
 const items = `
 CO-FOUNDER | THE DISCOVERY CENTRE | 2017 - PRESENT \n 
 FRONT-END DEVELOPER | DISCOVERY LABS | 2019 - PRESENT \n
 DESIGN CONSULTANT | 2020 - PRESENT
-`
+`;
 
 export default function Career(props) {
   return (
@@ -18,11 +18,13 @@ export default function Career(props) {
       />
 
       <FlatText
+        rotation-x={-Math.PI * 0.5}
+        rotation-z={-Math.PI}
         scale={0.27}
         value={items}
         position-z={-1.3}
         textAlign={"center"}
       />
     </group>
-  )
+  );
 }
