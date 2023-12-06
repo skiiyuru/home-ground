@@ -49,7 +49,7 @@ export default function Lights() {
         shadow-mapSize={[1024, 1024]}
       /> */}
 
-      <ambientLight intensity={0.25} />
+      <ambientLight intensity={0.17} />
 
       {/* front */}
       {/* <SpotLight position={[6.1, 5.2, 10]} {...floodLightConfig} /> */}
@@ -71,3 +71,15 @@ export default function Lights() {
     </>
   )
 }
+
+/* 
+<Lightformer
+          ref={lightFormer}
+          position-z={-5}
+          // scale={3}
+          scale={[4, 1]}
+          color={"lightblue"}
+          intensity={5}
+          // form={"ring"}
+        />
+*/

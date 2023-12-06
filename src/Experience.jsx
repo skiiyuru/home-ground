@@ -1,4 +1,9 @@
-import { KeyboardControls, Stars } from "@react-three/drei"
+import {
+  Environment,
+  KeyboardControls,
+  Lightformer,
+  Stars,
+} from "@react-three/drei"
 import { Physics } from "@react-three/rapier"
 import Ecctrl, { EcctrlAnimation } from "ecctrl"
 import { Perf } from "r3f-perf"
@@ -81,7 +86,7 @@ export default function Experience() {
 
   return (
     <>
-      <color args={["#000909"]} attach={"background"} />
+      <color args={["#1D2B44"]} attach={"background"} />
 
       <Perf position="top-left" />
 
