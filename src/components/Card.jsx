@@ -16,7 +16,7 @@ export default function Card(props) {
       restitution={0.2}
       friction={1}
       {...props}
-      rotation-y={props.forSkills ? degToRad(240) : degToRad(180)}
+      rotation-y={props.forSkills ? degToRad(360) : degToRad(180)}
     >
       <mesh
         geometry={props.geometry}
@@ -54,7 +54,7 @@ export default function Card(props) {
                     key={role + idx}
                     className=" border-solid border-2
                     border-white text-sm px-2 py-1 
-                    rounded-lg justify
+                    rounded-lg
                     "
                   >
                     {role}

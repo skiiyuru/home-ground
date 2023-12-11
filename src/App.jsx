@@ -2,11 +2,16 @@ import { Canvas } from "@react-three/fiber"
 import { EcctrlJoystick } from "ecctrl"
 import Experience from "./Experience.jsx"
 import { Loader } from "@react-three/drei"
+import StartScreen from "./components/StartScreen.jsx"
+import useGame from "./store/useGame.js"
+import { Suspense } from "react"
 
 export default function App() {
+  const [isTouch, phase] = useGame((state) => [state.isTouch, state.phase])
+
   return (
     <div className="h-screen">
-      <EcctrlJoystick />
+      {isTouch && <EcctrlJoystick />}
 
       <Canvas
         shadows
@@ -16,10 +21,14 @@ export default function App() {
         //   }
         // }}
       >
-        <Experience />
+        <Suspense fallback={null}>
+          {phase === "ready" && <Experience />}
+        </Suspense>
       </Canvas>
 
-      <Loader />
+      {/* <Loader /> */}
+
+      {phase === "intro" && <StartScreen />}
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import LetterBlocks from "./LetterBlocks";
-import FlatText from "./FlatText";
+import LetterBlocks from "./LetterBlocks"
+import FlatText from "./FlatText"
 
 export default function Bio(props) {
   return (
@@ -8,7 +8,7 @@ export default function Bio(props) {
         <LetterBlocks
           blockMaterial={props.blockMaterial}
           str={"KIIYURU"}
-          position-y={1.3}
+          position-y={0.85}
         />
         <LetterBlocks blockMaterial={props.blockMaterial} str={"STEPHEN"} />
       </group>
@@ -33,5 +33,5 @@ export default function Bio(props) {
         textAlign={"center"}
       />
     </group>
-  );
+  )
 }

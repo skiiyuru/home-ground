@@ -19,9 +19,11 @@
   "dependencies": {
     "@react-three/drei": "9.88.0",
     "@react-three/fiber": "8.14.5",
+    "@react-three/postprocessing": "^2.15.11",
     "@react-three/rapier": "1.1.1",
     "@use-gesture/core": "10.2.24",
     "ecctrl": "1.0.45",
+    "howler": "^2.2.4",
     "leva": "0.9.34",
     "r3f-perf": "7.1.2",
     "react": "18.2.0",

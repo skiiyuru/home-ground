@@ -50,7 +50,7 @@ export default function Projects(props) {
   return (
     <>
       <group
-        position={[7.2, 2.99, -6]}
+        position={[7.2, 2.6, -6]}
         rotation-y={degToRad(90)}
         // rotation-z={degToRad(10)}
         scale={0.9}

@@ -11,7 +11,7 @@ export default function Skills(props) {
     // description: "Technologies and languages that I use in my to build stuff.",
     // link: "https://www.oxford.co.ke/",
     // position: [-12.3, 6.6, -4],
-    position: [8.5, 5.7, -12],
+    position: [-8.5, 4.2, 4.1],
     texture: skills,
     sections: [
       {
@@ -32,11 +32,11 @@ export default function Skills(props) {
   return (
     <>
       <LetterBlocks
-        // position={[-10.9, 6.6, -2.5]}
-        // rotation-y={degToRad(90)}
+        position={[-7.2, 2.6, 5.3]}
+        rotation-y={degToRad(270)}
         scale={0.9}
-        position={[7.2, 4.4, -11.5]}
-        rotation-y={degToRad(90 + 42)}
+        // position={[7.2, 4.4, -11.5]}
+        // rotation-y={degToRad(90 + 42)}
         blockMaterial={props.blockMaterial}
         str={"skills"}
       />

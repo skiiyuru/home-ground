@@ -1,6 +1,6 @@
-import { SpotLight, useDepthBuffer, useHelper } from "@react-three/drei"
-import { useRef } from "react"
-import { SpotLightHelper } from "three"
+import { Sky, SpotLight, useDepthBuffer, useHelper } from "@react-three/drei"
+import { useEffect, useRef } from "react"
+import { DirectionalLightHelper, SpotLightHelper } from "three"
 
 const floodLightConfig = {
   castShadow: true,
@@ -19,43 +19,41 @@ const floodLightConfig = {
 
 export default function Lights() {
   const ref = useRef()
-  const ref2 = useRef()
-  // const ref3 = useRef()
-  // const ref4 = useRef()
-  // const ref5 = useRef()
-  // const ref6 = useRef()
-  // const ref7 = useRef()
-  // const ref8 = useRef()
-  // useHelper(ref, SpotLightHelper, "cyan")
+
+  // useHelper(ref, DirectionalLightHelper, "cyan")
   // useHelper(ref2, SpotLightHelper, "cyan")
-  // useHelper(ref3, SpotLightHelper, "cyan")
-  // useHelper(ref4, SpotLightHelper, "cyan")
-  // useHelper(ref5, SpotLightHelper, "cyan")
-  // useHelper(ref6, SpotLightHelper, "cyan")
-  // useHelper(ref7, SpotLightHelper, "cyan")
-  // useHelper(ref8, SpotLightHelper, "cyan")
+
+  const sunPosition = [-15, 15, -20]
+
   return (
     <>
-      {/* <directionalLight
-        intensity={0.45}
-        color={"#E5F4ED"}
+      <Sky
+        distance={450000}
+        sunPosition={sunPosition}
+        inclination={0}
+        azimuth={0.25}
+      />
+
+      <directionalLight
+        ref={ref}
+        intensity={0.5}
         castShadow
         shadow-bias={-0.0004}
-        position={[-10, 20, 20]}
+        position={sunPosition}
         shadow-camera-top={20}
         shadow-camera-right={20}
         shadow-camera-bottom={-20}
         shadow-camera-left={-20}
         shadow-mapSize={[1024, 1024]}
-      /> */}
+      />
 
-      <ambientLight intensity={0.17} />
+      <ambientLight intensity={0.1} />
 
       {/* front */}
       {/* <SpotLight position={[6.1, 5.2, 10]} {...floodLightConfig} /> */}
       {/* <SpotLight position={[-6.1, 5.2, 10]} {...floodLightConfig} /> */}
       {/*  */}
-      <SpotLight ref={ref} position={[-10.7, 8, 13.1]} {...floodLightConfig} />
+      {/* <SpotLight ref={ref} position={[-10.7, 8, 13.1]} {...floodLightConfig} /> */}
       {/* <SpotLight ref={ref} position={[12.6, 9.2, 16]} {...floodLightConfig} /> */}
 
       {/* back */}
@@ -71,15 +69,3 @@ export default function Lights() {
     </>
   )
 }
-
-/* 
-<Lightformer
-          ref={lightFormer}
-          position-z={-5}
-          // scale={3}
-          scale={[4, 1]}
-          color={"lightblue"}
-          intensity={5}
-          // form={"ring"}
-        />
-*/

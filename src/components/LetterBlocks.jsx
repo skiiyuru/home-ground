@@ -1,15 +1,30 @@
 import { Text3D } from "@react-three/drei"
 import { RigidBody } from "@react-three/rapier"
+import { useState } from "react"
+import { Howl, Howler } from "howler"
+import { playSound } from "../utils"
 
 function LetterBlock(props) {
+  const [hitSound] = useState(
+    () =>
+      new Howl({
+        src: ["./sounds/letter.ogg"],
+        preload: true,
+        // autoplay: false,
+        // loop: false,
+        // volume: 1,
+      })
+  )
+
   return (
     <RigidBody
+      // type="fixed"
       colliders="cuboid"
       position={props.position}
       rotation-y={Math.PI}
       restitution={0}
       friction={1}
-      // type="fixed"
+      onCollisionEnter={() => playSound(hitSound)}
     >
       <Text3D
         material={props.blockMaterial}
