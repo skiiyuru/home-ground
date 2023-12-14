@@ -27,7 +27,7 @@ function LetterBlock(props) {
       rotation-y={Math.PI}
       restitution={0.2}
       friction={1}
-      onCollisionEnter={() => playSound(hitSound)}
+      onCollisionEnter={() => playSound(hitSound, true)}
     >
       <Text3D
         material={props.blockMaterial}
