@@ -19,7 +19,7 @@ export default function Bio(props) {
       <FlatText
         rotation-x={-Math.PI * 0.5}
         rotation-z={-Math.PI}
-        position-z={-1.8}
+        position-z={-1}
         scale={0.45}
         value={"CREATIVE DEVELOPER"}
       />
@@ -27,7 +27,7 @@ export default function Bio(props) {
         rotation-x={-Math.PI * 0.5}
         rotation-z={-Math.PI}
         position-x={0.3}
-        position-z={-2.3}
+        position-z={-1.5}
         scale={0.27}
         value={`
            Creative developer living in Nairobi, Co-founder of
