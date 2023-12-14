@@ -2,6 +2,7 @@ import { useProgress } from "@react-three/drei"
 import useGame from "../store/useGame"
 import { playSound } from "../utils"
 import { useState } from "react"
+import { Howl } from "howler"
 
 function Key({ value }) {
   return (
@@ -49,11 +50,11 @@ function Button() {
       onTouchStart={() => {
         setIsTouch(true)
         setPhase("ready")
-        // playSound(backgroundMusic)
+        playSound(backgroundMusic)
       }}
       onClick={() => {
         setPhase("ready")
-        // playSound(backgroundMusic)
+        playSound(backgroundMusic)
       }}
     >
       start
@@ -63,7 +64,6 @@ function Button() {
 
 export default function StartScreen() {
   const { progress } = useProgress()
-  const [isMobile] = useGame((state) => [state.isMobile])
 
   return (
     <div

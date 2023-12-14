@@ -1,9 +1,9 @@
 import { Gltf } from "@react-three/drei"
-import { RigidBody } from "@react-three/rapier"
-import { useRef, useState } from "react"
-import { Howl, Howler } from "howler"
-import { handleFall, playSound } from "../utils"
 import { useFrame } from "@react-three/fiber"
+import { RigidBody } from "@react-three/rapier"
+import { Howl } from "howler"
+import { useRef, useState } from "react"
+import { handleFall, playSound } from "../utils"
 
 export default function Ball() {
   const [hitSound] = useState(

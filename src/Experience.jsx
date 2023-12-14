@@ -1,10 +1,3 @@
-import {
-  Environment,
-  Lightformer,
-  Sky,
-  Sparkles,
-  Stars,
-} from "@react-three/drei"
 import { Physics } from "@react-three/rapier"
 import { Perf } from "r3f-perf"
 import { useMemo } from "react"
@@ -24,8 +17,6 @@ import Player from "./components/Player.jsx"
 import Projects from "./components/Projects.jsx"
 import Skills from "./components/Skills.jsx"
 import Socials from "./components/Socials.jsx"
-import Stadium from "./components/Stadium.jsx"
-import Effects from "./components/Effects/Effects.jsx"
 import Stadium2 from "./components/Stadium2.jsx"
 
 export default function Experience() {
@@ -46,7 +37,7 @@ export default function Experience() {
     <>
       {/* <color args={["#1D2B44"]} attach={"background"} /> */}
 
-      <Perf position="top-left" />
+      {/* <Perf position="top-left" /> */}
 
       <Lights />
 

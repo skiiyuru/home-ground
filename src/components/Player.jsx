@@ -1,9 +1,8 @@
-import { KeyboardControls, useKeyboardControls } from "@react-three/drei"
-import Ecctrl, { EcctrlAnimation } from "ecctrl"
-import CharacterModel from "./CharacterModel"
-import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
+import Ecctrl, { EcctrlAnimation } from "ecctrl"
+import { useRef } from "react"
 import { handleFall } from "../utils"
+import CharacterModel from "./CharacterModel"
 
 /**
  * Character url preset

@@ -1,4 +1,4 @@
-import { Decal, useTexture } from "@react-three/drei"
+import { useTexture } from "@react-three/drei"
 import FlatText from "./FlatText"
 import Sticker from "./Sticker"
 

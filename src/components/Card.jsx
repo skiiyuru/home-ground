@@ -1,10 +1,9 @@
 import { Html, useKeyboardControls } from "@react-three/drei"
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
+import { useJoystickControls } from "ecctrl"
 import { useEffect, useState } from "react"
 import { degToRad } from "three/src/math/MathUtils"
 import Sticker from "./Sticker"
-import useGame from "../store/useGame"
-import { useJoystickControls } from "ecctrl"
 
 const size = 4
 

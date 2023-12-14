@@ -6,6 +6,7 @@ import { BoxGeometry, MeshBasicMaterial, Vector3 } from "three"
 import Experience from "./Experience.jsx"
 import StartScreen from "./components/StartScreen.jsx"
 import useGame from "./store/useGame.js"
+import Interface from "./components/Interface.jsx"
 
 export const keyboardMap = [
   { name: "forward", keys: ["ArrowUp", "KeyW"] },
@@ -64,7 +65,7 @@ export default function App() {
 
         {/* <Loader /> */}
 
-        {phase === "intro" && <StartScreen />}
+        {phase === "intro" ? <StartScreen /> : <Interface />}
       </KeyboardControls>
     </div>
   )

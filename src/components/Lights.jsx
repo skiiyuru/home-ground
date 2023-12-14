@@ -1,6 +1,5 @@
-import { Sky, SpotLight, useDepthBuffer, useHelper } from "@react-three/drei"
-import { useEffect, useRef } from "react"
-import { DirectionalLightHelper, SpotLightHelper } from "three"
+import { Sky } from "@react-three/drei"
+import { useRef } from "react"
 
 const floodLightConfig = {
   castShadow: true,

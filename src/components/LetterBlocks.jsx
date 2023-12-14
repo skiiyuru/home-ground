@@ -1,9 +1,9 @@
 import { Text3D } from "@react-three/drei"
 import { RigidBody } from "@react-three/rapier"
+import { Howl } from "howler"
 import { useState } from "react"
-import { Howl, Howler } from "howler"
-import { playSound } from "../utils"
 import useGame from "../store/useGame"
+import { playSound } from "../utils"
 
 function LetterBlock(props) {
   const [hitSound] = useState(
