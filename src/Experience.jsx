@@ -42,7 +42,7 @@ export default function Experience() {
 
       <Lights />
 
-      <Physics timeStep="vary" gravity={[0, -9.807 * 1.5, 0]}>
+      <Physics timeStep="vary" gravity={[0, -9.807 * 1.2, 0]}>
         <Player />
 
         <Stadium2 />

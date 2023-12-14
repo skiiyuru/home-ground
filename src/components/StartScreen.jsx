@@ -74,7 +74,10 @@ export default function StartScreen() {
         <Loader />
       ) : (
         <div className="flex flex-col gap-4 ">
-          <div className="text-5xl text-purple-700">How to play</div>
+          <div>
+            <div className="text-5xl text-purple-700">Controls</div>
+            <div className="text-xl">Use 🖱️ or Swipe to Adjust camera</div>
+          </div>
           <div className="flex gap-10">
             <div className="flex flex-col  gap-3 text-2xl">
               <div className="text-2xl text-gray-500">Desktop</div>
@@ -82,7 +85,7 @@ export default function StartScreen() {
                 <Key value="W" />
                 <Key value="S" />
                 <Key value="A" />
-                <Key value="D" />- Move
+                <Key value="D" /> - RUN
               </div>
               <div>
                 <Key value={"Spacebar"} /> - Jump
@@ -93,7 +96,7 @@ export default function StartScreen() {
             </div>
             <div className="flex flex-col  gap-3 text-2xl">
               <div className="text-2xl text-gray-500">Mobile</div>
-              <div className="flex gap-1">🕹️ - Move</div>
+              <div className="flex gap-1">🕹️ - RUN</div>
               <div>⚪ - Jump</div>
               <div>
                 <Key value="1" /> - Open
