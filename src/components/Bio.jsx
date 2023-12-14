@@ -10,9 +10,9 @@ export default function Bio(props) {
         <LetterBlocks
           blockMaterial={props.blockMaterial}
           str={"KIIYURU"}
-          // position-y={0.1}
-          rotation-x={degToRad(90)}
-          position-z={-1.5}
+          position-y={0.9}
+          // rotation-x={degToRad(90)}
+          // position-z={-1.5}
         />
       </group>
 

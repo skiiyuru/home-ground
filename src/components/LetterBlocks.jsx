@@ -17,11 +17,9 @@ function LetterBlock(props) {
       })
   )
 
-  const [isMobile] = useGame((state) => [state.isMobile])
-
   return (
     <RigidBody
-      type={isMobile && "fixed"}
+      // type={"fixed"}
       colliders="cuboid"
       position={props.position}
       rotation-y={Math.PI}
