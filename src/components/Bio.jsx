@@ -12,7 +12,7 @@ export default function Bio(props) {
           str={"KIIYURU"}
           // position-y={0.1}
           rotation-x={degToRad(90)}
-          position-z={-1.3}
+          position-z={-1.5}
         />
       </group>
 
