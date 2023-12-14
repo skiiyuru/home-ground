@@ -18,11 +18,11 @@ function LetterBlock(props) {
 
   return (
     <RigidBody
-      // type="fixed"
+      type={props.fixed && "fixed"}
       colliders="cuboid"
       position={props.position}
       rotation-y={Math.PI}
-      restitution={0}
+      restitution={0.2}
       friction={1}
       onCollisionEnter={() => playSound(hitSound)}
     >
@@ -55,10 +55,11 @@ export default function LetterBlocks(props) {
       {letters.length &&
         letters.map((letter, idx) => (
           <LetterBlock
+            fixed={props.fixed}
             blockMaterial={props.blockMaterial}
             key={idx}
             value={letter}
-            position={[-idx * 0.5, 0, 0]}
+            position={[-idx * 0.45, 0, 0]}
           />
         ))}
     </group>

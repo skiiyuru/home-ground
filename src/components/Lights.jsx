@@ -23,7 +23,7 @@ export default function Lights() {
   // useHelper(ref, DirectionalLightHelper, "cyan")
   // useHelper(ref2, SpotLightHelper, "cyan")
 
-  const sunPosition = [-15, 15, -20]
+  const sunPosition = [-15, 15, 20]
 
   return (
     <>
@@ -44,7 +44,7 @@ export default function Lights() {
         shadow-camera-right={20}
         shadow-camera-bottom={-20}
         shadow-camera-left={-20}
-        shadow-mapSize={[1024, 1024]}
+        shadow-mapSize={[512, 512]}
       />
 
       <ambientLight intensity={0.1} />

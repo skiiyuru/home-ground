@@ -1,13 +1,32 @@
-import { Html } from "@react-three/drei"
+import { Html, useKeyboardControls } from "@react-three/drei"
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { degToRad } from "three/src/math/MathUtils"
 import Sticker from "./Sticker"
+import useGame from "../store/useGame"
 
 const size = 4
 
 export default function Card(props) {
   const [showHint, setShowHint] = useState(false)
+  const [isMobile] = useGame((state) => [state.isMobile])
+
+  const openLink = useKeyboardControls((state) => state.action4)
+
+  useEffect(() => {
+    // let timer
+
+    if (showHint && openLink && props.data.link) {
+      setTimeout(() => {
+        window.open(props.data.link)
+        // setShowHint(false)
+      }, 1500)
+    }
+
+    // return () => {
+    //   clearTimeout(timer)
+    // }
+  }, [openLink])
 
   return (
     <RigidBody
@@ -87,7 +106,10 @@ export default function Card(props) {
             )}
 
             {props?.data?.link && (
-              <div className="text-gray-400 text-sm">Press "F" to open</div>
+              <div className="text-gray-400 text-sm">
+                {" "}
+                Press {isMobile ? '"2"' : '"F"'} to open
+              </div>
             )}
           </Html>
         )}

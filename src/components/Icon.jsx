@@ -1,13 +1,32 @@
-import { Decal, Html, useTexture } from "@react-three/drei"
+import { Decal, Html, useKeyboardControls, useTexture } from "@react-three/drei"
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { degToRad } from "three/src/math/MathUtils"
 import Sticker from "./Sticker"
+import useGame from "../store/useGame"
+import { useFrame } from "@react-three/fiber"
 
 const size = 1.5
 
 export default function Icon(props) {
   const [showHint, setShowHint] = useState(false)
+  const [isMobile] = useGame((state) => [state.isMobile])
+  const openLink = useKeyboardControls((state) => state.action4)
+
+  useEffect(() => {
+    // let timer
+
+    if (showHint && openLink && props.data.link) {
+      setTimeout(() => {
+        window.open(props.data.link)
+        // setShowHint(false)
+      }, 1500)
+    }
+
+    // return () => {
+    //   clearTimeout(timer)
+    // }
+  }, [openLink])
 
   return (
     <RigidBody
@@ -29,7 +48,7 @@ export default function Icon(props) {
           position={[-0.15, 0, 0]}
           rotation={[0, degToRad(270), 0]}
           scale={0.8}
-          texture={props.texture}
+          texture={props.data.texture}
         />
 
         {showHint && (
@@ -39,13 +58,15 @@ export default function Icon(props) {
             center
             distanceFactor={8}
           >
-            Press "F" to open
+            {props.data.label === "mail"
+              ? props.data.email
+              : `Press ${isMobile ? "2" : "F"} to open`}
           </Html>
         )}
       </mesh>
 
       <CuboidCollider
-        name={props.label}
+        name={props.data.label}
         args={[0.8, 0.7, 0.5]}
         sensor
         onIntersectionEnter={(data) => {

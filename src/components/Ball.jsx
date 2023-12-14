@@ -1,8 +1,9 @@
 import { Gltf } from "@react-three/drei"
 import { RigidBody } from "@react-three/rapier"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Howl, Howler } from "howler"
-import { playSound } from "../utils"
+import { handleFall, playSound } from "../utils"
+import { useFrame } from "@react-three/fiber"
 
 export default function Ball() {
   const [hitSound] = useState(
@@ -15,8 +16,16 @@ export default function Ball() {
         // volume: 1,
       })
   )
+
+  const ref = useRef()
+
+  useFrame((state, delta) => {
+    handleFall(ref)
+  })
+
   return (
     <RigidBody
+      ref={ref}
       colliders={"ball"}
       restitution={1}
       // friction={1}
@@ -31,7 +40,7 @@ export default function Ball() {
         }
       }}
     >
-      <Gltf scale={0.4} src="/models/ball.glb" castShadow />
+      <Gltf scale={0.5} src="/models/ball.glb" castShadow />
     </RigidBody>
   )
 }

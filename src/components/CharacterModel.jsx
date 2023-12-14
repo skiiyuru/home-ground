@@ -28,7 +28,6 @@ export default function CharacterModel(props) {
             geometry={nodes.Demon_1.geometry}
             material={materials.Demon_Main}
             skeleton={nodes.Demon_1.skeleton}
-            receiveShadow
             castShadow
           />
           <skinnedMesh
@@ -36,7 +35,6 @@ export default function CharacterModel(props) {
             geometry={nodes.Demon_2.geometry}
             material={materials.Black}
             skeleton={nodes.Demon_2.skeleton}
-            receiveShadow
             castShadow
           />
           <skinnedMesh
@@ -44,7 +42,6 @@ export default function CharacterModel(props) {
             geometry={nodes.Demon_3.geometry}
             material={materials.Eye_White}
             skeleton={nodes.Demon_3.skeleton}
-            receiveShadow
             castShadow
           />
           <skinnedMesh
@@ -52,7 +49,6 @@ export default function CharacterModel(props) {
             geometry={nodes.Demon_4.geometry}
             material={materials.Eye_Black}
             skeleton={nodes.Demon_4.skeleton}
-            receiveShadow
             castShadow
           />
         </group>
@@ -63,7 +59,6 @@ export default function CharacterModel(props) {
           skeleton={nodes.Trident.skeleton}
           position={[1.895, 1.734, -0.17]}
           scale={75.326}
-          receiveShadow
           castShadow
         />
       </group>

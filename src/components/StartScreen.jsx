@@ -3,6 +3,17 @@ import useGame from "../store/useGame"
 import { playSound } from "../utils"
 import { useState } from "react"
 
+function Key({ value }) {
+  return (
+    <span
+      className="border-solid border-2 border-white px-2 
+                rounded-lg"
+    >
+      {value}
+    </span>
+  )
+}
+
 function Loader() {
   return (
     <div className="flex space-x-2">
@@ -33,8 +44,8 @@ function Button() {
   return (
     <button
       className={`border-solid border-2 border-white p-3 
-        rounded-lg text-white tracking-wider 
-        text-5xl hover:bg-purple-700`}
+        rounded-lg  
+        text-5xl hover:bg-purple-400 bg-purple-700`}
       onTouchStart={() => {
         setIsTouch(true)
         setPhase("ready")
@@ -52,10 +63,50 @@ function Button() {
 
 export default function StartScreen() {
   const { progress } = useProgress()
+  const [isMobile] = useGame((state) => [state.isMobile])
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black">
-      {progress < 100 ? <Loader /> : <Button />}
+    <div
+      className="fixed inset-0 flex items-center justify-center z-50 bg-black text-white
+    tracking-wider"
+    >
+      {progress < 100 ? (
+        <Loader />
+      ) : (
+        <div className="flex flex-col gap-4">
+          <div className="text-5xl text-purple-700">How to play</div>
+          <div className="flex gap-10">
+            <div className="flex flex-col  gap-3 text-2xl">
+              <div className="text-2xl text-gray-500">Desktop</div>
+              <div className="flex gap-1">
+                <Key value="W" />
+                <Key value="S" />
+                <Key value="A" />
+                <Key value="D" />- Move
+              </div>
+              <div>
+                <Key value={"Spacebar"} /> - Jump
+              </div>
+              <div>
+                <Key value="F" /> - Open
+              </div>
+            </div>
+            <div className="flex flex-col  gap-3 text-2xl">
+              <div className="text-2xl text-gray-500">Mobile</div>
+              <div className="flex gap-1">
+                <Key value="Joystick" />- Move
+              </div>
+              <div>
+                <Key value={"1"} /> - Jump
+              </div>
+              <div>
+                <Key value="2" /> - Open
+              </div>
+            </div>
+          </div>
+          <Button />
+        </div>
+      )}
     </div>
   )
 }

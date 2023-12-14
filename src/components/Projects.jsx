@@ -18,15 +18,16 @@ export default function Projects(props) {
       link: "https://imla.io/",
       position: [8.5, 4.2, -5.6],
       texture: imla,
-      roles: ["Design", "UI Development"],
+      roles: ["Designer", "UI Developer"],
     },
     {
       title: "Longhorn Digital",
-      description: "Interactive STEM content that supplements text books.",
+      description:
+        "Personalized eLearning material for the schooling generation.",
       link: "https://longhornpublishers.com/longhorn-digital/",
       position: [8.5, 4.2, -2.5],
       texture: longhorn,
-      roles: ["Design", "UI Development"],
+      roles: ["Designer", "UI Developer"],
     },
     {
       title: "Oxford University Press",
@@ -34,13 +35,13 @@ export default function Projects(props) {
       link: "https://www.oxford.co.ke/",
       position: [10.8, 5.7, -5.6],
       texture: oxford,
-      roles: ["Design", "UI Development"],
+      roles: ["Designer", "UI Developer"],
     },
     {
       title: "The Discovery Centre",
       description:
         "Fostering children’s curiosity and interest in STEM through fun and interactive experiences.",
-      link: "imla.io",
+      link: "https://www.thediscoverycentre.co.ke/",
       position: [10.8, 5.7, -2.5],
       texture: discovery,
       roles: ["Co-founder", "Teacher"],
@@ -55,7 +56,11 @@ export default function Projects(props) {
         // rotation-z={degToRad(10)}
         scale={0.9}
       >
-        <LetterBlocks blockMaterial={props.blockMaterial} str={"PROJECTS"} />
+        <LetterBlocks
+          blockMaterial={props.blockMaterial}
+          str={"PROJECTS"}
+          // fixed
+        />
       </group>
 
       {items.map((item) => (

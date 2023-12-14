@@ -1,20 +1,9 @@
-import { KeyboardControls } from "@react-three/drei"
+import { KeyboardControls, useKeyboardControls } from "@react-three/drei"
 import Ecctrl, { EcctrlAnimation } from "ecctrl"
 import CharacterModel from "./CharacterModel"
 import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
 import { handleFall } from "../utils"
-
-const keyboardMap = [
-  { name: "forward", keys: ["ArrowUp", "KeyW"] },
-  { name: "backward", keys: ["ArrowDown", "KeyS"] },
-  { name: "leftward", keys: ["ArrowLeft", "KeyA"] },
-  { name: "rightward", keys: ["ArrowRight", "KeyD"] },
-  { name: "jump", keys: ["Space"] },
-  { name: "run", keys: ["Shift"] },
-  { name: "action1", keys: ["KeyF"] },
-  { name: "action2", keys: ["KeyG"] },
-]
 
 /**
  * Character url preset
@@ -47,10 +36,10 @@ const animationSet = {
   jumpIdle: "CharacterArmature|Jump_Idle",
   jumpLand: "CharacterArmature|Jump_Land",
   fall: "CharacterArmature|Duck", // This is for falling from high sky
-  action1: "CharacterArmature|Wave",
-  action2: "CharacterArmature|Death",
-  action3: "CharacterArmature|HitReact",
-  action4: "CharacterArmature|Punch",
+  // action1: "CharacterArmature|Punch",
+  // action2: "CharacterArmature|Death",
+  // action3: "CharacterArmature|HitReact",
+  action4: "CharacterArmature|Wave",
 }
 
 export default function Player() {
@@ -61,15 +50,10 @@ export default function Player() {
   })
 
   return (
-    <KeyboardControls map={keyboardMap}>
-      <Ecctrl ref={player} name="character" animated position={[0, 12, 0]}>
-        <EcctrlAnimation
-          characterURL={characterURL}
-          animationSet={animationSet}
-        >
-          <CharacterModel />
-        </EcctrlAnimation>
-      </Ecctrl>
-    </KeyboardControls>
+    <Ecctrl ref={player} name="character" animated position={[0, 12, 0]}>
+      <EcctrlAnimation characterURL={characterURL} animationSet={animationSet}>
+        <CharacterModel />
+      </EcctrlAnimation>
+    </Ecctrl>
   )
 }
