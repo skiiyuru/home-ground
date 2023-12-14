@@ -73,7 +73,7 @@ export default function StartScreen() {
       {progress < 100 ? (
         <Loader />
       ) : (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 ">
           <div className="text-5xl text-purple-700">How to play</div>
           <div className="flex gap-10">
             <div className="flex flex-col  gap-3 text-2xl">

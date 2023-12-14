@@ -5,13 +5,16 @@ import { degToRad } from "three/src/math/MathUtils"
 import Sticker from "./Sticker"
 import useGame from "../store/useGame"
 import { useFrame } from "@react-three/fiber"
+import { useJoystickControls } from "ecctrl"
 
 const size = 1.5
 
 export default function Icon(props) {
   const [showHint, setShowHint] = useState(false)
   const [isMobile] = useGame((state) => [state.isMobile])
-  const openLink = useKeyboardControls((state) => state.action4)
+  const openLink =
+    useKeyboardControls((state) => state.action4) ||
+    useJoystickControls((state) => state.curButton2Pressed)
 
   useEffect(() => {
     // let timer

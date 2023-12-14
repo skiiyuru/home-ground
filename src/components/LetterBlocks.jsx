@@ -3,6 +3,7 @@ import { RigidBody } from "@react-three/rapier"
 import { useState } from "react"
 import { Howl, Howler } from "howler"
 import { playSound } from "../utils"
+import useGame from "../store/useGame"
 
 function LetterBlock(props) {
   const [hitSound] = useState(
@@ -16,9 +17,11 @@ function LetterBlock(props) {
       })
   )
 
+  const [isMobile] = useGame((state) => [state.isMobile])
+
   return (
     <RigidBody
-      type={props.fixed && "fixed"}
+      type={isMobile && "fixed"}
       colliders="cuboid"
       position={props.position}
       rotation-y={Math.PI}

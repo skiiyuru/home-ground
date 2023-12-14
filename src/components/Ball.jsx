@@ -20,7 +20,7 @@ export default function Ball() {
   const ref = useRef()
 
   useFrame((state, delta) => {
-    handleFall(ref)
+    handleFall(ref, { x: -2, y: 7, z: 0 })
   })
 
   return (
