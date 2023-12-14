@@ -77,6 +77,7 @@ export default function StartScreen() {
           <div>
             <div className="text-5xl text-purple-700">Controls</div>
             <div className="text-xl">Use 🖱️ or Swipe to Adjust camera</div>
+            <div className="text-xl">Press 🔊 to mute sounds</div>
           </div>
           <div className="flex gap-10">
             <div className="flex flex-col  gap-3 text-2xl">
