@@ -2,8 +2,8 @@ export function playSound(sound, random = false) {
   if (sound.playing()) {
     return
   } else {
-    sound.fade(1, 0, 1000)
-    random && sound.volume(Math.random())
+    // sound.fade(1, 0, 1000)
+    // random && sound.volume(Math.random())
     sound.play()
   }
 }
