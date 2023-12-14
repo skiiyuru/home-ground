@@ -88,19 +88,15 @@ export default function StartScreen() {
                 <Key value={"Spacebar"} /> - Jump
               </div>
               <div>
-                <Key value="F" /> - Open
+                <Key value="1" /> - Open
               </div>
             </div>
             <div className="flex flex-col  gap-3 text-2xl">
               <div className="text-2xl text-gray-500">Mobile</div>
-              <div className="flex gap-1">
-                <Key value="Joystick" />- Move
-              </div>
+              <div className="flex gap-1">🕹️ - Move</div>
+              <div>⚪ - Jump</div>
               <div>
-                <Key value={"1"} /> - Jump
-              </div>
-              <div>
-                <Key value="2" /> - Open
+                <Key value="1" /> - Open
               </div>
             </div>
           </div>

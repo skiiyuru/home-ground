@@ -11,7 +11,6 @@ const size = 1.5
 
 export default function Icon(props) {
   const [showHint, setShowHint] = useState(false)
-  const [isMobile] = useGame((state) => [state.isMobile])
   const openLink =
     useKeyboardControls((state) => state.action4) ||
     useJoystickControls((state) => state.curButton2Pressed)
@@ -62,8 +61,8 @@ export default function Icon(props) {
             distanceFactor={8}
           >
             {props.data.label === "mail"
-              ? props.data.email
-              : `Press ${isMobile ? "2" : "F"} to open`}
+              ? props.data?.email
+              : `Press "1" to open`}
           </Html>
         )}
       </mesh>

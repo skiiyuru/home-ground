@@ -4,14 +4,16 @@ import { useEffect, useState } from "react"
 import { degToRad } from "three/src/math/MathUtils"
 import Sticker from "./Sticker"
 import useGame from "../store/useGame"
+import { useJoystickControls } from "ecctrl"
 
 const size = 4
 
 export default function Card(props) {
   const [showHint, setShowHint] = useState(false)
-  const [isMobile] = useGame((state) => [state.isMobile])
 
-  const openLink = useKeyboardControls((state) => state.action4)
+  const openLink =
+    useKeyboardControls((state) => state.action4) ||
+    useJoystickControls((state) => state.curButton2Pressed)
 
   useEffect(() => {
     // let timer
@@ -106,10 +108,7 @@ export default function Card(props) {
             )}
 
             {props?.data?.link && (
-              <div className="text-gray-400 text-sm">
-                {" "}
-                Press {isMobile ? '"2"' : '"F"'} to open
-              </div>
+              <div className="text-gray-400 text-sm">Press "1" to open</div>
             )}
           </Html>
         )}
