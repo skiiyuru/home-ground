@@ -19,7 +19,7 @@ function LetterBlock(props) {
 
   return (
     <RigidBody
-      // type={"fixed"}
+      type={props.fixed && "fixed"}
       colliders="cuboid"
       position={props.position}
       rotation-y={Math.PI}

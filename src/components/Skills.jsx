@@ -39,7 +39,7 @@ export default function Skills(props) {
         // rotation-y={degToRad(90 + 42)}
         blockMaterial={props.blockMaterial}
         str={"skills"}
-        // fixed
+        fixed
       />
 
       <Card

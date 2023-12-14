@@ -59,7 +59,7 @@ export default function Projects(props) {
         <LetterBlocks
           blockMaterial={props.blockMaterial}
           str={"PROJECTS"}
-          // fixed
+          fixed
         />
       </group>
 

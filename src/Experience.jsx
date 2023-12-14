@@ -1,4 +1,4 @@
-import { Physics } from "@react-three/rapier"
+import { Physics, RigidBody } from "@react-three/rapier"
 import { Perf } from "r3f-perf"
 import { useMemo } from "react"
 import {
@@ -18,6 +18,7 @@ import Projects from "./components/Projects.jsx"
 import Skills from "./components/Skills.jsx"
 import Socials from "./components/Socials.jsx"
 import Stadium2 from "./components/Stadium2.jsx"
+import { Box } from "@react-three/drei"
 
 export default function Experience() {
   // Optimizations
@@ -71,6 +72,11 @@ export default function Experience() {
           geometry={boxGeometry}
           material={cardMaterial}
         />
+
+        {/* floor */}
+        <RigidBody type="fixed" position-y={-10}>
+          <Box args={[20, 2, 24]} />
+        </RigidBody>
       </Physics>
       <FanDecals material={cardMaterial} geometry={boxGeometry} />
 

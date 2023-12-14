@@ -48,11 +48,7 @@ export default function Lab(props) {
   return (
     <>
       <group position={[7.2, 2.6, 3.3]} rotation-y={degToRad(90)} scale={0.9}>
-        <LetterBlocks
-          blockMaterial={props.blockMaterial}
-          str={"LAB"}
-          // fixed
-        />
+        <LetterBlocks blockMaterial={props.blockMaterial} str={"LAB"} fixed />
       </group>
 
       {items.map((item) => (
