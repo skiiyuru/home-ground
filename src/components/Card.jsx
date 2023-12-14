@@ -11,9 +11,10 @@ const size = 4
 export default function Card(props) {
   const [showHint, setShowHint] = useState(false)
 
-  const openLink =
-    useKeyboardControls((state) => state.action4) ||
-    useJoystickControls((state) => state.curButton2Pressed)
+  const openDesktop = useKeyboardControls((state) => state.action4)
+  const openMobile = useJoystickControls((state) => state.curButton2Pressed)
+
+  const openLink = openDesktop || openMobile
 
   useEffect(() => {
     // let timer

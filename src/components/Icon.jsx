@@ -1,19 +1,18 @@
-import { Decal, Html, useKeyboardControls, useTexture } from "@react-three/drei"
+import { Html, useKeyboardControls } from "@react-three/drei"
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
+import { useJoystickControls } from "ecctrl"
 import { useEffect, useState } from "react"
 import { degToRad } from "three/src/math/MathUtils"
 import Sticker from "./Sticker"
-import useGame from "../store/useGame"
-import { useFrame } from "@react-three/fiber"
-import { useJoystickControls } from "ecctrl"
 
 const size = 1.5
 
 export default function Icon(props) {
   const [showHint, setShowHint] = useState(false)
-  const openLink =
-    useKeyboardControls((state) => state.action4) ||
-    useJoystickControls((state) => state.curButton2Pressed)
+  const openDesktop = useKeyboardControls((state) => state.action4)
+  const openMobile = useJoystickControls((state) => state.curButton2Pressed)
+
+  const openLink = openDesktop || openMobile
 
   useEffect(() => {
     // let timer
