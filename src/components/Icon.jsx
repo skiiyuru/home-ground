@@ -46,8 +46,8 @@ export default function Icon(props) {
       >
         <Sticker
           // debug
-          position={[-0.15, 0, 0]}
-          rotation={[0, degToRad(270), 0]}
+          position={[0.15, 0, 0]}
+          rotation={[0, degToRad(90), 0]}
           scale={0.8}
           texture={props.data.texture}
         />
@@ -68,7 +68,7 @@ export default function Icon(props) {
 
       <CuboidCollider
         name={props.data.label}
-        args={[0.8, 0.7, 0.5]}
+        args={[0.8, 0.7, 0.3]}
         sensor
         onIntersectionEnter={(data) => {
           // console.log(data.other.colliderObject.parent.name)

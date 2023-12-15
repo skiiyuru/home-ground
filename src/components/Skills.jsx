@@ -32,7 +32,7 @@ export default function Skills(props) {
   return (
     <>
       <LetterBlocks
-        position={[-7.2, 2.6, 5.3]}
+        position={[-7.2, 2.55, 5.3]}
         rotation-y={degToRad(270)}
         scale={0.9}
         // position={[7.2, 4.4, -11.5]}
