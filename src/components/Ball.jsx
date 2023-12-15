@@ -1,4 +1,4 @@
-import { Gltf } from "@react-three/drei"
+import { Gltf, useGLTF } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import { RigidBody } from "@react-three/rapier"
 import { Howl } from "howler"
@@ -44,3 +44,5 @@ export default function Ball() {
     </RigidBody>
   )
 }
+
+useGLTF.preload("/models/ball.glb")

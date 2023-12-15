@@ -1,4 +1,4 @@
-import { Text3D } from "@react-three/drei"
+import { Text3D, useFont } from "@react-three/drei"
 import { RigidBody } from "@react-three/rapier"
 import { Howl } from "howler"
 import { useState } from "react"
@@ -66,3 +66,5 @@ export default function LetterBlocks(props) {
     </group>
   )
 }
+
+useFont.preload("/fonts/bebas.json")

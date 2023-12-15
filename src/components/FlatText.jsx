@@ -1,7 +1,7 @@
-import { Text } from "@react-three/drei";
+import { Text, useFont } from "@react-three/drei"
 
 export default function FlatText(props) {
-  const fontUrl = "./fonts/bebas-neue-v9-latin-regular.woff";
+  const fontUrl = "./fonts/bebas-neue-v9-latin-regular.woff"
 
   return (
     <Text
@@ -13,5 +13,7 @@ export default function FlatText(props) {
     >
       {props.value}
     </Text>
-  );
+  )
 }
+
+useFont.preload("/fonts/bebas-neue-v9-latin-regular.woff")
