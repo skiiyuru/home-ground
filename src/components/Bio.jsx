@@ -20,21 +20,22 @@ export default function Bio(props) {
         rotation-x={-Math.PI * 0.5}
         rotation-z={-Math.PI}
         position-z={-1}
-        scale={0.45}
+        scale={0.5}
         value={"CREATIVE DEVELOPER"}
       />
-      <FlatText
+      {/* <FlatText
         rotation-x={-Math.PI * 0.5}
         rotation-z={-Math.PI}
         position-x={0.3}
-        position-z={-1.5}
+        position-z={-1.7}
         scale={0.27}
         value={`
-           Creative developer living in Nairobi, Co-founder of
-           The Discovery Centre and a huge Manchester United fan :)`}
+           As a dynamic creative developer based in Kenya,
+           I fuse imagination with code to craft immersive digital experiences. 
+           `}
         // position-z={0.5}
         textAlign={"center"}
-      />
+      /> */}
     </group>
   )
 }

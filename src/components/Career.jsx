@@ -1,11 +1,10 @@
-import LetterBlocks from "./LetterBlocks";
-import FlatText from "./FlatText";
+import LetterBlocks from "./LetterBlocks"
+import FlatText from "./FlatText"
 
 const items = `
-CO-FOUNDER | THE DISCOVERY CENTRE | 2017 - PRESENT \n 
-FRONT-END DEVELOPER | DISCOVERY LABS | 2019 - PRESENT \n
-DESIGN CONSULTANT | 2020 - PRESENT
-`;
+software engineer | THE DISCOVERY CENTRE | 2019 - PRESENT \n 
+Stem program manager | THE DISCOVERY CENTRE | 2017 - 2018 \n
+`
 
 export default function Career(props) {
   return (
@@ -26,5 +25,5 @@ export default function Career(props) {
         textAlign={"center"}
       />
     </group>
-  );
+  )
 }

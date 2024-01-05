@@ -18,7 +18,7 @@ export default function Projects(props) {
       link: "https://imla.io/",
       position: [8.5, 4.2, -5.6],
       texture: imla,
-      roles: ["Designer", "UI Developer"],
+      roles: ["Designer", "Web Developer"],
     },
     {
       title: "Longhorn Digital",
@@ -27,7 +27,7 @@ export default function Projects(props) {
       link: "https://longhornpublishers.com/longhorn-digital/",
       position: [8.5, 4.2, -2.5],
       texture: longhorn,
-      roles: ["Designer", "UI Developer"],
+      roles: ["Designer", "Web Developer"],
     },
     {
       title: "Oxford University Press",
@@ -35,7 +35,7 @@ export default function Projects(props) {
       link: "https://www.oxford.co.ke/",
       position: [10.8, 5.7, -5.6],
       texture: oxford,
-      roles: ["Designer", "UI Developer"],
+      roles: ["Designer", "Web Developer"],
     },
     {
       title: "The Discovery Centre",
@@ -44,7 +44,7 @@ export default function Projects(props) {
       link: "https://www.thediscoverycentre.co.ke/",
       position: [10.8, 5.7, -2.5],
       texture: discovery,
-      roles: ["Co-founder", "Teacher"],
+      roles: ["Program Manager"],
     },
   ]
 

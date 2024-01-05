@@ -16,7 +16,11 @@ export default function Skills(props) {
     sections: [
       {
         title: "web",
-        children: ["react", "tailwind", "three.js"],
+        children: ["react", "Typescript", "Tailwind"],
+      },
+      {
+        title: "mobile",
+        children: ["react native", "Expo"],
       },
       {
         title: "machine learning",

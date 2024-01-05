@@ -25,7 +25,7 @@ function Loader() {
   )
 }
 
-function Button() {
+function Button({ isIntro, setIsIntro }) {
   const [setIsTouch, setPhase] = useGame((state) => [
     state.setIsTouch,
     state.setPhase,
@@ -46,24 +46,91 @@ function Button() {
     <button
       className={`border-solid border-2 border-white p-3 
         rounded-lg  
-        text-5xl hover:bg-purple-400 bg-purple-700`}
+        text-5xl hover:bg-purple-400 bg-purple-700
+        ${isIntro && "mx-6"}`}
       onTouchStart={() => {
-        setIsTouch(true)
-        setPhase("ready")
-        playSound(backgroundMusic)
+        if (isIntro) {
+          setIsIntro(false)
+        } else {
+          setIsTouch(true)
+          setPhase("ready")
+          playSound(backgroundMusic)
+        }
       }}
       onClick={() => {
-        setPhase("ready")
-        playSound(backgroundMusic)
+        if (isIntro) {
+          setIsIntro(false)
+        } else {
+          setPhase("ready")
+          playSound(backgroundMusic)
+        }
       }}
     >
-      start
+      {isIntro ? "Next" : "Start"}
     </button>
+  )
+}
+
+function Controls() {
+  return (
+    <>
+      <div>
+        <div className="text-5xl text-purple-700">Controls</div>
+        <div className="text-xl">Use 🖱️ or Swipe to Adjust camera</div>
+        <div className="text-xl">Press 🔊 to mute sounds</div>
+      </div>
+      <div className="flex gap-10">
+        <div className="flex flex-col  gap-3 text-2xl">
+          <div className="text-2xl text-gray-500">Desktop</div>
+          <div className="flex gap-1">
+            <Key value="W" />
+            <Key value="S" />
+            <Key value="A" />
+            <Key value="D" /> - RUN
+          </div>
+          <div>
+            <Key value={"Spacebar"} /> - Jump
+          </div>
+          <div>
+            <Key value="1" /> - Open
+          </div>
+        </div>
+        <div className="flex flex-col  gap-3 text-2xl">
+          <div className="text-2xl text-gray-500">Mobile</div>
+          <div className="flex gap-1">🕹️ - RUN</div>
+          <div>⚪ - Jump</div>
+          <div>
+            <Key value="1" /> - Open
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+function Intro() {
+  return (
+    <div className="mx-6 max-w-prose">
+      <div className="text-5xl text-purple-700">Hi👋 I'm Steve</div>
+      <div className="text-xl text-justify">
+        As a dynamic creative developer based in Nairobi, I fuse imagination
+        with code to craft immersive digital experiences. With a fervent
+        enthusiasm for machine learning, I explore its endless possibilities in
+        shaping innovative solutions. My journey is deeply intertwined with the
+        spirit of <span className="text-red-700">Manchester United</span> ,
+        reflected in my football-themed portfolio where I've sculpted a vibrant
+        stadium world, featuring a devilish character paying homage to the
+        renowned <span className="text-red-700"> Red Devils</span>. Join me in
+        exploring the intersection of technology and passion for football within
+        this digital arena.
+      </div>
+    </div>
   )
 }
 
 export default function StartScreen() {
   const { progress } = useProgress()
+  const [isIntro, setIsIntro] = useState(true)
 
   return (
     <div
@@ -74,37 +141,8 @@ export default function StartScreen() {
         <Loader />
       ) : (
         <div className="flex flex-col gap-4 ">
-          <div>
-            <div className="text-5xl text-purple-700">Controls</div>
-            <div className="text-xl">Use 🖱️ or Swipe to Adjust camera</div>
-            <div className="text-xl">Press 🔊 to mute sounds</div>
-          </div>
-          <div className="flex gap-10">
-            <div className="flex flex-col  gap-3 text-2xl">
-              <div className="text-2xl text-gray-500">Desktop</div>
-              <div className="flex gap-1">
-                <Key value="W" />
-                <Key value="S" />
-                <Key value="A" />
-                <Key value="D" /> - RUN
-              </div>
-              <div>
-                <Key value={"Spacebar"} /> - Jump
-              </div>
-              <div>
-                <Key value="1" /> - Open
-              </div>
-            </div>
-            <div className="flex flex-col  gap-3 text-2xl">
-              <div className="text-2xl text-gray-500">Mobile</div>
-              <div className="flex gap-1">🕹️ - RUN</div>
-              <div>⚪ - Jump</div>
-              <div>
-                <Key value="1" /> - Open
-              </div>
-            </div>
-          </div>
-          <Button />
+          {isIntro ? <Intro /> : <Controls />}
+          <Button isIntro={isIntro} setIsIntro={setIsIntro} />
         </div>
       )}
     </div>
