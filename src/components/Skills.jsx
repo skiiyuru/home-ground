@@ -16,7 +16,7 @@ export default function Skills(props) {
     sections: [
       {
         title: "web",
-        children: ["react", "Typescript", "Tailwind"],
+        children: ["react", "Typescript", "Tailwind", "Next.js"],
       },
       {
         title: "mobile",
