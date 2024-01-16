@@ -89,7 +89,7 @@ export default function Card(props) {
                 {props?.data?.sections.map((section) => (
                   <div key={section.title}>
                     <div className="">{section.title}</div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 flex-wrap">
                       {section.children.map((label, idx) => (
                         <div
                           key={label + idx}
