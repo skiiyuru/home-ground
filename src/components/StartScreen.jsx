@@ -113,16 +113,12 @@ function Intro() {
     <div className="mx-6 max-w-prose">
       <div className="text-5xl text-purple-700">Hi👋 I'm Steve</div>
       <div className="text-xl text-justify">
-        As a dynamic creative developer based in Nairobi, I fuse imagination
-        with code to craft immersive digital experiences. With a fervent
-        enthusiasm for machine learning, I explore its endless possibilities in
-        shaping innovative solutions. My journey is deeply intertwined with the
-        spirit of <span className="text-red-700">Manchester United</span> ,
-        reflected in my football-themed portfolio where I've sculpted a vibrant
-        stadium world, featuring a devilish character paying homage to the
-        renowned <span className="text-red-700"> Red Devils</span>. Join me in
-        exploring the intersection of technology and passion for football within
-        this digital arena.
+        As a creative developer based in Nairobi, I fuse imagination with code
+        to craft immersive digital experiences. My journey is deeply intertwined
+        with the spirit of{" "}
+        <span className="text-red-700">Manchester United</span>, reflected in my
+        football-themed portfolio featuring a devilish character paying homage
+        to the renowned <span className="text-red-700"> Red Devils</span>.
       </div>
     </div>
   )
