@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "react-error-boundary"
 import { KeyboardControls } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import { EcctrlJoystick } from "ecctrl"
@@ -7,6 +8,7 @@ import Experience from "./Experience.jsx"
 import StartScreen from "./components/StartScreen.jsx"
 import useGame from "./store/useGame.js"
 import Interface from "./components/Interface.jsx"
+import useDeviceDetection from "./utils/hooks/useDeviceDetection.js"
 
 export const keyboardMap = [
   { name: "forward", keys: ["ArrowUp", "KeyW"] },
@@ -22,8 +24,20 @@ export const keyboardMap = [
   { name: "action4", keys: ["1"] },
 ]
 
+function ErrorScreen({ error, resetErrorBoundary }) {
+  // Call resetErrorBoundary() to reset the error boundary and retry the render.
+
+  return (
+    <div className="mx-6 max-w-prose">
+      <div className="text-xl text-justify">Something went wrong</div>
+      <pre style={{ color: "red" }}>{error.message}</pre>
+    </div>
+  )
+}
+
 export default function App() {
-  const [isTouch, phase] = useGame((state) => [state.isTouch, state.phase])
+  const [phase] = useGame((state) => [state.phase])
+  const { isMobile } = useDeviceDetection()
 
   const boxGeometry = useMemo(() => new BoxGeometry(0.25, 0.5, 1), [])
   const activeMaterial = useMemo(
@@ -33,40 +47,42 @@ export default function App() {
 
   return (
     <div className="h-screen">
-      <KeyboardControls map={keyboardMap}>
-        {isTouch && (
-          <EcctrlJoystick
-            buttonNumber={2}
-            buttonTop1Props={{
-              scale: new Vector3(0.7, 0.7, 0.7),
-              // geometry: boxGeometry,
-              material: activeMaterial,
-            }}
-            buttonTop2Props={{
-              scale: new Vector3(1, 1, 1),
-              geometry: boxGeometry,
-              material: activeMaterial,
-            }}
-          />
-        )}
+      <ErrorBoundary FallbackComponent={ErrorScreen}>
+        <KeyboardControls map={keyboardMap}>
+          {phase === "ready" && isMobile && (
+            <EcctrlJoystick
+              buttonNumber={2}
+              buttonTop1Props={{
+                scale: new Vector3(0.7, 0.7, 0.7),
+                // geometry: boxGeometry,
+                material: activeMaterial,
+              }}
+              buttonTop2Props={{
+                scale: new Vector3(1, 1, 1),
+                geometry: boxGeometry,
+                material: activeMaterial,
+              }}
+            />
+          )}
 
-        <Canvas
-          shadows
-          // onPointerDown={(e) => {
-          //   if (e.pointerType === "mouse") {
-          //     e.target.requestPointerLock()
-          //   }
-          // }}
-        >
-          <Suspense fallback={null}>
-            {phase === "ready" && <Experience />}
-          </Suspense>
-        </Canvas>
+          <Canvas
+            shadows
+            // onPointerDown={(e) => {
+            //   if (e.pointerType === "mouse") {
+            //     e.target.requestPointerLock()
+            //   }
+            // }}
+          >
+            <Suspense fallback={null}>
+              {phase === "ready" && <Experience />}
+            </Suspense>
+          </Canvas>
 
-        {/* <Loader /> */}
+          {/* <Loader /> */}
 
-        {phase === "intro" ? <StartScreen /> : <Interface />}
-      </KeyboardControls>
+          {phase === "intro" ? <StartScreen /> : <Interface />}
+        </KeyboardControls>
+      </ErrorBoundary>
     </div>
   )
 }

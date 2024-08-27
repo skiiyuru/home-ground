@@ -4,27 +4,6 @@ import { useRef } from "react"
 import { handleFall } from "../utils"
 import CharacterModel from "./CharacterModel"
 
-/**
- * Character url preset
- */
-// const characterURL = "/models/sk.glb"
-
-/**
- * Character animation set preset
- */
-// const animationSet = {
-//   idle: "idle",
-//   walk: "walk",
-//   run: "run",
-//   jump: "jump",
-//   jumpIdle: "jumpIdle",
-//   jumpLand: "jumpLand",
-//   fall: "jumpIdle",
-//   action1: "open",
-//   action2: "pass",
-//   // action3: "",
-//   // action4: "",
-// }
 const characterURL = "/models/Demon.glb"
 
 const animationSet = {
@@ -49,8 +28,17 @@ export default function Player() {
   })
 
   return (
-    <Ecctrl ref={player} name="character" animated position={[0, 12, 0]}>
-      <EcctrlAnimation characterURL={characterURL} animationSet={animationSet}>
+    <Ecctrl
+      ref={player}
+      name="character"
+      animated
+      position={[0, 12, 0]}
+      mode="FixedCamera"
+    >
+      <EcctrlAnimation
+        characterURL={characterURL}
+        animationSet={animationSet}
+      >
         <CharacterModel />
       </EcctrlAnimation>
     </Ecctrl>

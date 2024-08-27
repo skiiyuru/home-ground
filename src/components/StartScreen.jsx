@@ -26,10 +26,7 @@ function Loader() {
 }
 
 function Button({ isIntro, setIsIntro }) {
-  const [setIsTouch, setPhase] = useGame((state) => [
-    state.setIsTouch,
-    state.setPhase,
-  ])
+  const [setPhase] = useGame((state) => [state.setPhase])
 
   const [backgroundMusic] = useState(
     () =>
@@ -48,15 +45,6 @@ function Button({ isIntro, setIsIntro }) {
         rounded-lg  
         text-5xl hover:bg-purple-400 bg-purple-700
         ${isIntro && "mx-6"}`}
-      onTouchStart={() => {
-        if (isIntro) {
-          setIsIntro(false)
-        } else {
-          setIsTouch(true)
-          setPhase("ready")
-          playSound(backgroundMusic)
-        }
-      }}
       onClick={() => {
         if (isIntro) {
           setIsIntro(false)
@@ -125,7 +113,7 @@ function Intro() {
 }
 
 export default function StartScreen() {
-  const { progress } = useProgress()
+  const { progress, errors } = useProgress()
   const [isIntro, setIsIntro] = useState(true)
 
   return (
@@ -138,7 +126,10 @@ export default function StartScreen() {
       ) : (
         <div className="flex flex-col gap-4 ">
           {isIntro ? <Intro /> : <Controls />}
-          <Button isIntro={isIntro} setIsIntro={setIsIntro} />
+          <Button
+            isIntro={isIntro}
+            setIsIntro={setIsIntro}
+          />
         </div>
       )}
     </div>

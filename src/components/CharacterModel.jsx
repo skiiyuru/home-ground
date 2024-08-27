@@ -22,7 +22,11 @@ export default function CharacterModel(props) {
         >
           <primitive object={nodes.Root} />
         </group>
-        <group name="Demon" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+        <group
+          name="Demon"
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={100}
+        >
           <skinnedMesh
             name="Demon_1"
             geometry={nodes.Demon_1.geometry}

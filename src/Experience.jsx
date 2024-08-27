@@ -42,7 +42,10 @@ export default function Experience() {
 
       <Lights />
 
-      <Physics timeStep="vary" gravity={[0, -9.807 * 1.2, 0]}>
+      <Physics
+        timeStep="vary"
+        gravity={[0, -9.807 * 1.2, 0]}
+      >
         <Player />
 
         <Stadium2 />
@@ -51,9 +54,15 @@ export default function Experience() {
 
         <Bio blockMaterial={blockMaterial} />
 
-        <Career blockMaterial={blockMaterial} rotation-y={Math.PI} />
+        <Career
+          blockMaterial={blockMaterial}
+          rotation-y={Math.PI}
+        />
 
-        <Socials geometry={boxGeometry} blockMaterial={blockMaterial} />
+        <Socials
+          geometry={boxGeometry}
+          blockMaterial={blockMaterial}
+        />
 
         <Projects
           blockMaterial={blockMaterial}
@@ -74,11 +83,17 @@ export default function Experience() {
         />
 
         {/* floor */}
-        <RigidBody type="fixed" position-y={-10}>
+        <RigidBody
+          type="fixed"
+          position-y={-10}
+        >
           <Box args={[20, 2, 24]} />
         </RigidBody>
       </Physics>
-      <FanDecals material={cardMaterial} geometry={boxGeometry} />
+      <FanDecals
+        material={cardMaterial}
+        geometry={boxGeometry}
+      />
 
       {/* <Effects /> */}
 
